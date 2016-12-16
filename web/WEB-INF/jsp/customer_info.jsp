@@ -28,7 +28,8 @@
                     </div>
                     <div>
                         <span>Số điện thoại<label>*</label></span>
-                        <form:input path="phone" required="true"/>
+                        <form:input path="phone" required="true" pattern="\(?[+]?\d+\)?[-.\s]?\d+[-.\s]?\d+"
+                                    title="Must in form : (555) 444-6789 / 555-444-6789 / 555.444.6789 / 555 444 6789 / +5554446789 / 5554446789"/>
                         <form:errors path="phone" cssClass="error-message"/>
                     </div>
                     <div>

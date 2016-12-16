@@ -21,7 +21,7 @@
     <div class="check">
         <div class="col-md-9 cart-items">
             <h1>Giỏ hàng của tôi</h1>
-            
+
             <c:if test="${ empty cartForm.cartEntriesProducts }">
                 <div class="cart-header">
                     <h3>------>Không có mặt hàng nào trong giỏ hàng<------</h3>
@@ -52,14 +52,15 @@
                                             <p>Giá tiền : <format:formatNumber value="${cartEntry.product.priceTag}" type="currency"/></p>
                                         </li>
                                         <li>
-                                            <p>Số lượng : <form:input path="cartEntriesProducts[${varStatus.index}].quantity" size="1" required="true"/></p>
+                                            <p>Số lượng : <form:input path="cartEntriesProducts[${varStatus.index}].quantity" size="1" required="true"
+                                                                      pattern="[1-9][\d]*" title="Must integer value, ex: 2,3,4..."/></p>
                                         </li>
                                         <li>
                                             <p>Thành tiền : <format:formatNumber value="${cartEntry.amount}" type="currency"/></p>
                                         </li>
                                     </ul>
                                     <div class="delivery">
-                                        <p>Phí vận chuyển ( 10% giá trị hóa đơn ) : <format:formatNumber value="${cartForm.amountTotalInCart * 0.1}" type="currency"/></p>
+                                        <p>Phí vận chuyển ( 1% giá trị hóa đơn ) : <format:formatNumber value="${cartForm.amountTotalInCart * 0.01}" type="currency"/></p>
                                         <span>Thời gian vận chuyển : 20 - 30 phút</span>
                                         <div class="clearfix"></div>
                                     </div>
@@ -73,31 +74,25 @@
                     </div>
                 </form:form>
             </c:if>
-
-            <%--<script>--%>
-                <%--$(document).ready(function (c) {--%>
-                    <%--$('.close1').on('click', function (c) {--%>
-                        <%--$('.cart-header').fadeOut('slow', function (c) {--%>
-                            <%--$('.cart-header').remove();--%>
-                        <%--});--%>
-                    <%--});--%>
-                <%--});--%>
-            <%--</script>--%>
         </div>
 
         <div class="col-md-3 cart-total">
             <a class="continue" href="${pageContext.request.contextPath}/product_list">Tiếp tục mua sắm</a>
             <a class="continue" href="${pageContext.request.contextPath}/checkout_customer">Nhập thông tin khách hàng</a>
             <div class="price-details">
-                <h3>-------Chi tiết giỏ hàng------</h3>
+                <h3>Chi tiết giỏ hàng</h3>
                 <span>Tổng tiền sản phẩm</span>
                 <span class="total1"><format:formatNumber value="${cartForm.amountTotalInCart}" type="currency"/></span>
                 <span>Giảm giá</span>
                 <span class="total1">Không có chương trình</span>
                 <span>Chi phí vận chuyển</span>
-                <span class="total1"><format:formatNumber value="${cartForm.amountTotalInCart * 0.1}" type="currency"/></span>
-                <c:if test="${cartForm.validCustomer}">
-                    <h3>------Thông tin khách hàng------</h3>
+                <span class="total1"><format:formatNumber value="${cartForm.amountTotalInCart * 0.01}" type="currency"/></span>
+                <div class="clearfix"></div>
+            </div>
+            <br>
+            <c:if test="${cartForm.validCustomer}">
+                <div class="price-details">
+                    <h3>Thông tin khách hàng</h3>
                     <span>Tên khách hàng :</span>
                     <span class="total1">${cartForm.customer.name}</span>
                     <span>Email :</span>
@@ -106,13 +101,13 @@
                     <span class="total1">${cartForm.customer.phone}</span>
                     <span>Địa chỉ :</span>
                     <span class="total1">${cartForm.customer.address}</span>
-                </c:if>
-                <div class="clearfix"></div>
-            </div>
+                    <div class="clearfix"></div>
+                </div>
+            </c:if>
             <ul class="total_price">
                 <li class="last_price">
                     <h4>TỔNG TIỀN</h4></li>
-                <li class="last_price"><span><format:formatNumber value="${cartForm.amountTotalInCart * 1.1}" type="currency"/></span></li>
+                <li class="last_price"><span><format:formatNumber value="${cartForm.amountTotalInCart * 1.01}" type="currency"/></span></li>
                 <div class="clearfix"></div>
             </ul>
 

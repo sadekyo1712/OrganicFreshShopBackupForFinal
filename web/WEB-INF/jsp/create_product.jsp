@@ -50,10 +50,12 @@
                     <div>
                         <span>Giá sản phẩm<label>*</label></span>
                         <c:if test="${not empty productForm.priceTag}">
-                            <form:input path="priceTag" placeholder="${productForm.priceTag}" required="true"/>
+                            <form:input path="priceTag" placeholder="${productForm.priceTag}" required="true"
+                                        pattern="[1-9](.[\d]+)?" title="Require number value"/>
                         </c:if>
                         <c:if test="${empty productForm.priceTag}">
-                            <form:input path="priceTag" required="true" placeholder="Ex: 100000"/>
+                            <form:input path="priceTag" required="true" placeholder="Ex: 100000"
+                                        pattern="[1-9](.[\d]+)?" title="Require number value"/>
                         </c:if>
                         <span><form:errors path="priceTag"/></span>
                     </div>
@@ -88,8 +90,8 @@
                     </div>
                     <div class="register-but">
                         <span>Tải ảnh sản phẩm lên</span>
-                        <%--<form:input id="productImage" path="productImage" type="file" cssClass="hidden"/>--%>
-                        <%--<form:label path="productImage" for="productImage">Chọn ảnh</form:label>--%>
+                            <%--<form:input id="productImage" path="productImage" type="file" cssClass="hidden"/>--%>
+                            <%--<form:label path="productImage" for="productImage">Chọn ảnh</form:label>--%>
                         <a href="${pageContext.request.contextPath}/intro">
                             <label>Chọn ảnh ( chức năng đang thử nghiệm )</label>
                         </a>

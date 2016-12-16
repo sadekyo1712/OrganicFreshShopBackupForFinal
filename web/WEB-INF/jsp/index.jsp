@@ -46,8 +46,8 @@
                                 </div>
                             </div>
                             <div class="shop-content" style="height: 80px;">
-                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag">Rau củ quả</a></div>
-                                <h3><a href="${pageContext.request.contextPath}/product_info?code=${product.code}">${product.name}</a></h3>
+                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag" style="font-size: 1em; font-weight: 500; color: #47b675">Rau củ quả</a></div>
+                                <h3><a href="${pageContext.request.contextPath}/product_info?code=${product.code}" style="font-size: 1em; font-weight: normal; color: #ffffff">${product.name}</a></h3>
                                 <span class="amount item_price"><format:formatNumber value="${product.priceTag}" type="currency"/></span>
                             </div>
                         </div>

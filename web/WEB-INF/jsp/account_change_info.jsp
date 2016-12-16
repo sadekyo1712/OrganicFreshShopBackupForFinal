@@ -29,20 +29,48 @@
                         <span>Mật khẩu</span>
                         <form:input type="password" path="password" placeholder="${account.password}" required="true"/>
                     </div>
-                    <div>
-                        <span>Loại tài khoản</span>
-                        <form:select path="userRole">
-                            <form:option value="USER">USER</form:option>
-                            <form:option value="SUPPLIER">SUPPLIER</form:option>
-                        </form:select>
-                    </div>
-                    <div>
-                        <span>Trạng thái tài khoản</span>
-                        <form:select path="active">
-                            <form:option value="true">HOẠT ĐỘNG</form:option>
-                            <form:option value="false">VÔ HIỆU HÓA</form:option>
-                        </form:select>
-                    </div>
+                    <c:if test="${account.userRole.equals('MANAGER')}">
+                        <div>
+                            <span>Loại tài khoản</span>
+                            <form:select path="userRole">
+                                <form:option value="MANAGER">MANAGER</form:option>
+                            </form:select>
+                        </div>
+                    </c:if>
+                    <c:if test="${account.userRole.equals('EMPLOYEE')}">
+                        <div>
+                            <span>Loại tài khoản</span>
+                            <form:select path="userRole">
+                                <form:option value="EMPLOYEE">EMPLOYEE</form:option>
+                            </form:select>
+                        </div>
+                    </c:if>
+                    <c:if test="${!account.userRole.equals('MANAGER') && !account.userRole.equals('EMPLOYEE')}">
+                        <div>
+                            <span>Loại tài khoản</span>
+                            <form:select path="userRole">
+                                <form:option value="USER">USER</form:option>
+                                <form:option value="SUPPLIER">SUPPLIER</form:option>
+                            </form:select>
+                        </div>
+                    </c:if>
+                    <c:if test="${account.userRole.equals('MANAGER')}">
+                        <div>
+                            <span>Trạng thái tài khoản</span>
+                            <form:select path="active">
+                                <form:option value="true">HOẠT ĐỘNG</form:option>
+                            </form:select>
+                        </div>
+                    </c:if>
+                    <c:if test="${!account.userRole.equals('MANAGER')}">
+                        <div>
+                            <span>Trạng thái tài khoản</span>
+                            <form:select path="active">
+                                <form:option value="true">HOẠT ĐỘNG</form:option>
+                                <form:option value="false">VÔ HIỆU HÓA</form:option>
+                            </form:select>
+                        </div>
+                    </c:if>
                 </div>
                 <div class="register-top-grid">
                     <h3>THÔNG TIN CÁ NHÂN</h3>
@@ -52,18 +80,22 @@
                     </div>
                     <div>
                         <span>Số điện thoại</span>
-                        <form:input path="phone" placeholder="${account.phone}" required="true"/>
+                        <form:input path="phone" placeholder="${account.phone}" required="true"
+                                    pattern="\(?[+]?\d+\)?[-.\s]?\d+[-.\s]?\d+"
+                                    title="Must in form : (555) 444-6789 / 555-444-6789 / 555.444.6789 / 555 444 6789 / 5554446789"/>
                     </div>
                     <div>
                         <span>Địa chỉ</span>
-                        <form:input path="address" placeholder="${account.address}" required="true"/>
+                        <form:input path="address" placeholder="${account.address}" required="true"
+                                    title="Not empty"/>
                     </div>
                     <div>
                         <span>Email</span>
-                        <form:input type="email" path="email" placeholder="${account.email}" required="true"/>
+                        <form:input type="email" path="email" placeholder="${account.email}" required="true"
+                                    title="Must in correct email form"/>
                     </div>
                     <div>
-                        <span>* Đăng nhập lại tài khoản "${pageContext.request.userPrincipal.name}" để cập nhật việc thay đổi cấu hình</span>
+                        <span>* Đăng nhập lại tài khoản "${pageContext.request.userPrincipal.name}" để cập nhật việc thay đổi cấu hình tài khoản</span>
                     </div>
                     <div class="clearfix"></div>
                     <a class="news-letter" href="${pageContext.request.contextPath}/intro">

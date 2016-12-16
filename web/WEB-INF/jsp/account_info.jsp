@@ -18,7 +18,7 @@
 
 <div class="single_top">
     <div class="container">
-        <div class="account-info text-center">
+        <div class="account-info text-left">
             <h2>Thông tin tài khoản :</h2>
             <ul>
                 <li><span>Tài khoản : </span>${pageContext.request.userPrincipal.name}</li>
@@ -28,7 +28,23 @@
                             <li><span>Permission : </span>${userAuthority.authority}</li>
                         </c:forEach>
                     </ul>
+                    <ul>
+                        <li><span>Mật khẩu : </span>*********${userDetail.password}</li>
+                        <li><span>Chuỗi băm mật khẩu : </span>${account.password}</li>
+                        <li><span>Account non expired : </span>${userDetail.accountNonExpired}</li>
+                        <li><span>Account non locked : </span>${userDetail.accountNonLocked}</li>
+                        <li><span>Credentials non locked : </span>${userDetail.credentialsNonExpired}</li>
+                        <li><span>Tài khoản được kích hoạt : </span>${userDetail.enabled}</li>
+                    </ul>
                 </li>
+            </ul>
+            <h2><br></h2>
+            <h2>Thông tin cá nhân :</h2>
+            <ul>
+                <li><span>Tên chủ tài khoản : </span>${account.name}</li>
+                <li><span>Địa chỉ : </span>${account.address}</li>
+                <li><span>Email : </span>${account.email}</li>
+                <li><span>Số điện thoại : </span>${account.phone}</li>
             </ul>
             <a class="b-home" href="${pageContext.request.contextPath}/index">Trở về trang chủ</a>
         </div>
