@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="OrganicFreshShop">
+    <output-path>$PROJECT_DIR$/out/artifacts/OrganicFreshShop</output-path>
+    <root id="archive" name="OrganicFreshShop.war">
+      <element id="artifact" artifact-name="OrganicFreshShop:war exploded" />
+    </root>
+  </artifact>
+</component>
