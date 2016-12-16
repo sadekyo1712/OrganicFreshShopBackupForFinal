@@ -40,13 +40,13 @@
                             <div class="shop-holder">
                                 <div class="product-img">
                                     <a href="${pageContext.request.contextPath}/product_info">
-                                        <img width="225" height="265" src="<c:url value="${product.uri}" />"
+                                        <img width="225" height="265" src="<c:url value="${product.uri}"/>"
                                              class="img-responsive" alt="item4"> </a>
                                     <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}" class="button item_add"></a>
                                 </div>
                             </div>
                             <div class="shop-content" style="height: 80px;">
-                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag" style="font-size: 1em; font-weight: 500; color: #47b675">Rau củ quả</a></div>
+                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag" style="font-size: 1em; font-weight: 500; color: #319e46">Rau củ quả</a></div>
                                 <h3><a href="${pageContext.request.contextPath}/product_info?code=${product.code}" style="font-size: 1em; font-weight: normal; color: #ffffff">${product.name}</a></h3>
                                 <span class="amount item_price"><format:formatNumber value="${product.priceTag}" type="currency"/></span>
                             </div>
@@ -77,7 +77,7 @@
         <h2 class="m_3">Blog chia sẻ kinh nghiệm</h2>
         <div class="grid_1">
             <div class="col-md-6 blog_1">
-                <a href="${pageContext.request.contextPath}/index_single">
+                <a href="${pageContext.request.contextPath}/index_single" style="color: #ffffff">
                     <div class="item-inner">
                         <img src="<c:url value="/resources/images/blog-baner.jpg" />" class="img-responsive" alt=""/>
                         <div class="date-comments">
@@ -100,7 +100,7 @@
                 </a>
             </div>
             <div class="col-md-6 row_2">
-                <a href="${pageContext.request.contextPath}/index_single">
+                <a href="${pageContext.request.contextPath}/index_single" style="color: #ffffff">
                     <div class="item-inner">
                         <img src="<c:url value="/resources/images/blog-baner2.jpg" />" class="img-responsive" alt=""/>
                         <div class="date-comments">

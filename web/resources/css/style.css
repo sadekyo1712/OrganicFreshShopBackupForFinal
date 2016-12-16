@@ -165,7 +165,7 @@ body a{
 	text-transform: inherit;
 	font-size: 1.5em;
 	font-weight: normal;
-	margin: 5px -100%;
+	margin: 5px -110%;
 }
 .logo h1 a span{
 	color: #01433e;
@@ -334,11 +334,11 @@ body a{
 .button a{
 	text-decoration: none;
 	color:#fff;
-	background: #01302d;
+	background: #c12f45;
 	padding: 10px 40px;
 	text-transform: uppercase;
 	font-weight: normal;
-	font-size: 1em;
+	font-size: 1.1em;
 }
 /* Bounce To Right */
 /* Shutter Out Horizontal */
@@ -366,7 +366,7 @@ body a{
   bottom: 0;
   left: 0;
   right: 0;
-  background: #c12f45;
+  background: #01302d;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
@@ -409,10 +409,10 @@ h2.m_3 {
   margin:0 0 0 1.6%;
 }
 .col_1_of_3:hover .shop-holder{
-	border: 8px solid #f54d56;
+	border: 2px solid #01302d;
 }
 .shop-holder{
-	border: 8px solid #ebebeb;
+	border: 4px solid #ffffff;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -424,7 +424,7 @@ h2.m_3 {
   right: 30px;
   width: 40px;
   height: 40px;
-  background: url(../images/plus.png) no-repeat 8px 8px #F54D5B;
+  background: url(../images/plus.png) no-repeat 8px 8px #01302d;
   color: #fff;
   text-align: center;
   line-height: 33px;
@@ -547,11 +547,15 @@ h2.m_3 {
     display: block;
 }
 .shop-holder1{
-	border:1px solid #ebebeb;
-	margin-bottom: 1em;
+	border:8px solid #ebebeb;
+	/*margin-bottom: 1em;*/
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }
 .shop-holder1:hover{
-	border:1px solid #f54d56;
+	border:4px solid #01302d;
 }
 .row_4{
 	background: url(../images/pic10.jpg) no-repeat center top;
