@@ -313,15 +313,15 @@ body a{
 }
 .banner_desc h1{
 	color: #fff;
-	font-size: 3.5em;
-	font-weight: 900;
+	font-size: 3em;
+	font-weight: normal;
 	text-transform: uppercase;
 }
 .banner_desc h2{
 	color:#fff;
 	text-transform:uppercase;
 	font-size:2em;
-	font-weight:500;
+	font-weight:normal;
 	letter-spacing:5px;
 }
 .button {
@@ -334,11 +334,11 @@ body a{
 .button a{
 	text-decoration: none;
 	color:#fff;
-	background:#f54d56;
+	background: #01302d;
 	padding: 10px 40px;
 	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 1.2em;
+	font-weight: normal;
+	font-size: 1em;
 }
 /* Bounce To Right */
 /* Shutter Out Horizontal */
@@ -366,7 +366,7 @@ body a{
   bottom: 0;
   left: 0;
   right: 0;
-  background:#000;
+  background: #c12f45;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
