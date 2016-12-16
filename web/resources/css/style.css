@@ -140,12 +140,12 @@ body a{
 	list-style: none;
 }
 .cssmenu ul li {
-	color: #1ecedd;
+	color: #ffffff;
 	display: inline-block;
 	font-size:13px;
 }
 .cssmenu ul li {
-	color: #1ecedd;
+	color: #ffffff;
 	display: inline-block;
 	font-size:13px;
 }
@@ -154,7 +154,7 @@ body a{
 	font-size:13px;
 }
 .cssmenu ul li a:hover, .h_nav ul li a:hover, .content_box h4 a:hover, ul.list_1 li a:hover, .box_3 h4 a:hover{
-	color:#f54d56;
+	color: #c14344;
 	text-decoration:none;
 }
 .logo {
@@ -162,19 +162,28 @@ body a{
 	padding-left:0;
 }
 .logo h1{
-	  text-transform: uppercase;
-      font-size: 1.5em;
- 	 font-weight: 800;
-     margin: 5px 0 0 0;
+	text-transform: inherit;
+	font-size: 1.5em;
+	font-weight: normal;
+	margin: 5px -100%;
 }
 .logo h1 a span{
-	color: #146c5d;
+	color: #01433e;
+}
+.logo h1 a b{
+	color: #9da1a6;
 }
 .logo h1 a{
 	color:#333;
 }
 .logo h1 a:hover{
 	text-decoration:none;
+}
+.logo h1 a span:hover{
+	color: #c14344;
+}
+.logo h1 a b:hover{
+	color: #000000;
 }
 .header_bottom {
    padding:2em 0;
@@ -2526,7 +2535,7 @@ a.order:hover{
 	margin-right:10%;
 }
 a.cpns{
-	background:#f54d56;
+	background: #01433e;
 	color:#fff;
 	
 	padding: 10px;
@@ -2534,7 +2543,7 @@ a.cpns{
 	font-weight:600;
 }
 a.cpns:hover{
-	background:rgb(3, 193, 167);
+	background: rgb(193, 67, 68);
 }
 .total-item p{
 	font-size:0.9em;
