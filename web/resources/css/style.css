@@ -305,7 +305,20 @@ body a{
 	-o-background-size: cover;
 	background-size: cover;
 	background-position: center;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 	min-height:500px;
+}
+.banner:hover {
+	background: url(../images/blog.jpg) no-repeat center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	min-height:700px;
 }
 .banner_desc{
 	padding-top:9em;
@@ -316,6 +329,16 @@ body a{
 	font-size: 3em;
 	font-weight: normal;
 	text-transform: uppercase;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+.banner_desc h1:hover{
+	color: #3bc69c;
+	font-size: 3em;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 .banner_desc h2{
 	color:#fff;
@@ -323,6 +346,17 @@ body a{
 	font-size:2em;
 	font-weight:normal;
 	letter-spacing:5px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+.banner_desc h2:hover{
+	color:#fff;
+	text-transform:uppercase;
+	font-size:2em;
+	font-weight:normal;
+	letter-spacing:10px;
 }
 .button {
 	display: block;
@@ -480,7 +514,7 @@ h2.m_3:hover{
 	-o-transition: all 0.3s ease;
 }
 .about-block-content .border-add:hover {
-	border: 8px solid #ffffff;
+	border: 2px solid #ffffff;
 	left: 5px;
 	right: 5px;
 	bottom: 5px;
@@ -498,7 +532,7 @@ h2.m_3:hover{
   color: #fff;
   text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: 10px;
+  letter-spacing: 12px;
   margin-top: 0;
 }
 .item-inner {
