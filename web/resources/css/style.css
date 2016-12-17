@@ -827,7 +827,7 @@ ul.footer_social li a i.fb {
 	-o-transition: all 0.3s ease;
 }
 ul.footer_social li a i.fb:hover {
-	background: url(../images/facebook_5.png) no-repeat center;
+	background: url(../images/facebook_6.png) no-repeat center;
 	background-size: 25px 25px;
 }
 ul.footer_social li a i.tw {
@@ -855,7 +855,7 @@ ul.footer_social li a i.google:hover{
 	background-size: 25px 25px;
 }
 ul.footer_social li a i.instagram{
-	background: url(../images/insta8.png) no-repeat center;
+	background: url(../images/insta2.png) no-repeat center;
 	background-size: 25px 25px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
@@ -863,7 +863,7 @@ ul.footer_social li a i.instagram{
 	-o-transition: all 0.3s ease;
 }
 ul.footer_social li a i.instagram:hover{
-	background: url(../images/insta3.png) no-repeat center;
+	background: url(../images/insta11.png) no-repeat center;
 	background-size: 25px 25px;
 }
 /*ul.footer_social li a i:hover{*/
