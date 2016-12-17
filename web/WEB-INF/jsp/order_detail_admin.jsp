@@ -20,7 +20,7 @@
 <div class="container">
     <div class="check">
         <div class="col-md-9 cart-items">
-            <h1>Chi tiết hóa đơn :</h1>
+            <h1 style="font-style: normal; font-weight: bold">Chi tiết hóa đơn :</h1>
 
             <c:forEach items="${order.orderDetails}" var="orderDetailInfo">
                 <div class="cart-header2">

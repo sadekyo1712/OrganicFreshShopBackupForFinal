@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -248,15 +249,16 @@ public class MainController {
         return "redirect:/supplier_product_list?user_name=" + username ;
     }
 
-    @RequestMapping( value = "/buy_product")
+    @RequestMapping( value = "/buy_product", method = RequestMethod.GET )
     public String buyProductHandle( HttpServletRequest servletRequest, ModelMap modelMap,
-                                    @RequestParam( value = "code", defaultValue = "") String code) {
+                                    @RequestParam( value = "code", defaultValue = "") String code,
+                                    @RequestParam( value = "quantity", defaultValue = "1") String quantity) {
         Product product = null;
         if ( ( code != null ) && ( code.length() > 0 ) )
             product = productDAOImplement.fetchProduct( code );
         if ( product != null ) {
             Cart cart = Utils.getCartInSession( servletRequest );
-            cart.addProduct( product, 1 );
+            cart.addProduct( product, Integer.parseInt( quantity ) );
         }
         System.out.println("In buy product page and is redirecting to checkout page.......");
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( servletRequest ) );
@@ -297,14 +299,43 @@ public class MainController {
             ModelMap modelMap, HttpServletRequest request,
             @RequestParam( value = "code", defaultValue = "S1")String code ) {
         Product product = null;
+        long startFetchProduct;
+        long endFetchProduct;
+        long startFetchAccountInfo;
+        long endFetchAccountInfo;
+        long timeFetchAccount = 0;
+        long timeFetchProduct = 0;
+
         if ( code.equals("") )
             return "redirect:/product_list";
         else if ( code.length() > 0 ) {
+            startFetchProduct = System.currentTimeMillis();
             product = productDAOImplement.fetchProduct( code );
+            endFetchProduct = System.currentTimeMillis();
+            timeFetchProduct = endFetchProduct - startFetchProduct;
         }
         if ( product == null )
             return "redirect:/product_list";
         List<Product> listRandomProductDemo = productDAOImplement.listRandomProductDemo( 4 );
+        String createdAccount = product.getCreatedAccount();
+
+        startFetchAccountInfo = System.currentTimeMillis();
+        Account account = accountDAOImplement.fetchAccount( createdAccount );
+        endFetchAccountInfo = System.currentTimeMillis();
+        timeFetchAccount = endFetchAccountInfo - startFetchAccountInfo;
+
+        String email = account.getEmail();
+        String phone = account.getPhone();
+        String name = account.getName();
+        Date currentTime = new Date();
+
+        modelMap.addAttribute( "time_to_get_product_info", timeFetchProduct );
+        modelMap.addAttribute( "time_to_get_account_assoc_info", timeFetchAccount );
+        modelMap.addAttribute( "time", currentTime );
+        modelMap.addAttribute( "created_user", createdAccount );
+        modelMap.addAttribute( "created_user_name", name );
+        modelMap.addAttribute( "created_user_email", email );
+        modelMap.addAttribute( "created_user_phone", phone );
         modelMap.addAttribute( "product", product );
         modelMap.addAttribute( "listRandomProductDemo", listRandomProductDemo );
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );

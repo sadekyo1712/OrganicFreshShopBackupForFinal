@@ -61,6 +61,7 @@
 
 <div class="single_top">
     <div class="container">
+
         <div class="single_grid">
             <div class="grid images_3_of_2">
                 <ul id="etalage">
@@ -81,13 +82,22 @@
                 <p>${product.description}</p>
                 <div class="dropdown_top">
                     <div class="dropdown_left">
-                        <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro1"}'>
-                            <option value="0">Số lượng( kg )</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <select title="dropbox_buy_product" form="buy_product" class="dropdown" name="quantity" tabindex="10" data-settings='{"wrapperClass":"metro1"}'>
+                            <option value="1">Số lượng( kg )</option>
+                            <option value="1">1 kg</option>
+                            <option value="2">2 kg</option>
+                            <option value="3">3 kg</option>
+                            <option value="4">4 kg</option>
+                            <option value="5">5 kg</option>
+                            <option value="6">6 kg</option>
+                            <option value="7">7 kg</option>
+                            <option value="8">8 kg</option>
+                            <option value="9">9 kg</option>
+                            <option value="10">10 kg</option>
+                            <option value="20">20 kg</option>
+                            <option value="30">30 kg</option>
+                            <option value="40">40 kg</option>
+                            <option value="50">50 kg</option>
                         </select>
                     </div>
                     <ul class="color_list">
@@ -122,9 +132,11 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="size_2-right">
-                        <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}" class="item_add item_add1 btn_5"/>Đưa vào rỏ hàng </a>
+                        <form id="buy_product" action="${pageContext.request.contextPath}/buy_product" method="get">
+                            <input title="code" class="hidden" name="code" value="${product.code}">
+                            <input type="submit" class="item_add1 btn_5" value="Đưa vào giỏ hàng">
+                        </form>
                     </div>
-
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -173,36 +185,39 @@
             <li class="item2">
                 <a href="#"><img src="<c:url value="/resources/images/product_arrow.png" />">Thông tin người cung cấp sản phẩm</a>
                 <ul>
-                    <c:if test="${account != null}">
-                        <li class="subitem1">
-                            &nbsp;&nbsp;--------------------------------------<br>
-                            &nbsp;&nbsp;|-------> Tên : ${account.name}<br>
-                            &nbsp;&nbsp;|-------> Địa chỉ :${account.address}<br>
-                            &nbsp;&nbsp;|-------> Số điện thoại : ${account.phone}<br>
-                            &nbsp;&nbsp;--------------------------------------<br>
-                        </li>
-                    </c:if>
-                    <c:if test="${account == null}">
-                        <li class="subitem1">
-                            &nbsp;&nbsp;------------------------<br>
-                            &nbsp;&nbsp;|  Thiếu thông tin tài khoản  |<br>
-                            &nbsp;&nbsp;------------------------<br>
-                        </li>
-                    </c:if>
-                    <li class="subitem2">
-                        &nbsp;&nbsp;---------------------------<br>
-                        &nbsp;&nbsp;|  Không có thông tin bổ sung   |<br>
-                        &nbsp;&nbsp;---------------------------<br>
+                    <li class="subitem1" style="color: #ffffff">
+                        &nbsp;&nbsp;Thông tin nhà cung cấp
+                        &nbsp;&nbsp;--------------------------------------------------------------------------------<br>
+                        &nbsp;&nbsp;|---> Username nhà cung cấp sản phẩm : ${created_user}<br>
+                        &nbsp;&nbsp;|---> Họ tên nhà cung cấp sản phẩm : ${created_user_name}<br>
+                        &nbsp;&nbsp;|---> Email liên hệ : ${created_user_email}<br>
+                        &nbsp;&nbsp;|---> Số điện thoại / Số tài khoản : ${created_user_phone}<br>
+                        &nbsp;&nbsp;-------------------------------------------------------------------------------------------------------------<br>
                     </li>
-                    <li class="subitem3">
-                        &nbsp;&nbsp;------------------------------------------------------------------------------------------------<br>
-                        &nbsp;&nbsp;&nbsp;Thông tin chuyển khoản OrganikShop: ( Chúng tôi sẽ hỗ trợ bạn chuyển khoản đến nhà cung cấp )<br>
-                        &nbsp;&nbsp;---> Ngân hàng Agribank - Chi nhánh Xuyên Á <---<br>
-                        &nbsp;&nbsp;---> Chủ tài khoản: <a href="${pageContext.request.contextPath}/about">Bùi Đức Hưng</a> <---<br>
-                        &nbsp;&nbsp;---> Số tài khoản: 6150 205 150 343 <---<br>
-                        &nbsp;&nbsp;---> Liên hệ : 01677533389 để quảng cáo <---<br>
-                        &nbsp;&nbsp;---> Phí giao dịch và chuyển khoản là 10% giá trị sản phẩm tức : <format:formatNumber value="${ product.priceTag * 0.1 }" currencySymbol="VNĐ" type="currency"/> <---<br>
-                        &nbsp;&nbsp;-------------------------------------------------------------------------------------------------<br>
+                    <li class="subitem1" style="color: #ffffff">
+                        &nbsp;&nbsp;Thống kê kết quả trả về
+                        &nbsp;&nbsp;---------------------------------------------------------------------------------<br>
+                        &nbsp;&nbsp;|---> Thời điểm vào xem thông tin sản phẩm : ${time}<br>
+                        &nbsp;&nbsp;|---> Thời gian trả về thông tin sản phẩm : ${time_to_get_product_info} ms<br>
+                        &nbsp;&nbsp;|---> Thời gian trả về thông tin nhà cung cấp : ${time_to_get_account_assoc_info} ms<br>
+                        &nbsp;&nbsp;---------------------------------------------------------------------------------------------------------------<br>
+                    </li>
+                    <li class="subitem2" style="color: #ffffff">
+                        &nbsp;&nbsp;Thông tin bổ sung cho sản phẩm
+                        &nbsp;&nbsp;-----------------------------------<br>
+                        &nbsp;&nbsp;|---> Không có thông tin bổ sung<br>
+                        &nbsp;&nbsp;----------------------------------------------------------------------------<br>
+                    </li>
+                    <li class="subitem3" style="color: #ffffff">
+                        &nbsp;&nbsp;Thông tin chuyển khoản cho OrganikFreshSHOP
+                        &nbsp;&nbsp;---------------------------------------------------------------------------------<br>
+                        &nbsp;&nbsp;---> Chúng tôi sẽ hỗ trợ bạn chuyển khoản đến nhà cung cấp<br>
+                        &nbsp;&nbsp;---> Ngân hàng VietinBank - Chi nhánh Chùa Láng<br>
+                        &nbsp;&nbsp;---> Chủ tài khoản: <a style="color: #ffffff" href="${pageContext.request.contextPath}/about">Bùi Đức Hưng</a><br>
+                        &nbsp;&nbsp;---> Số tài khoản: 6150 205 150 343<br>
+                        &nbsp;&nbsp;---> Liên hệ : 01677533389 để quảng cáo<br>
+                        &nbsp;&nbsp;---> Phí giao dịch và chuyển khoản là 1% giá trị sản phẩm tức : <format:formatNumber value="${ product.priceTag * 0.01 }" currencySymbol="VNĐ" type="currency"/><br>
+                        &nbsp;&nbsp;----------------------------------------------------------------------------------------------------------------------------------------------<br>
                     </li>
                 </ul>
             </li>

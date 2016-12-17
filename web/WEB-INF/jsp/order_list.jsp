@@ -19,13 +19,13 @@
 <div class="container">
     <div class="check">
         <div class="col-md-9 cart-items">
-            <h1>Danh sách hóa đơn :</h1>
+            <h1 style="font-style: normal; font-weight: bold">Danh sách hóa đơn :</h1>
 
             <c:forEach items="${paginatorResult.list}" var="order">
                 <div class="cart-header2">
                     <div class="cart-sec simpleCart_shelfItem">
                         <div class="cart-item cyc">
-                            <img src="<c:url value="/resources/images/order.png"/>" class="img-responsive" alt=""/>
+                            <img src="<c:url value="/resources/images/order_3.png"/>" class="img-responsive" alt=""/>
                         </div>
                         <div class="cart-item-info">
                             <h3>
@@ -70,6 +70,15 @@
                 <h3>Danh sách hóa đơn</h3>
                 <span>Số lượng hóa đơn :</span>
                 <span class="total1">${paginatorResult.totalRecord}</span>
+                <div class="clearfix"></div>
+            </div>
+            <br>
+            <div class="price-details">
+                <h3>Thống kê hệ thống</h3>
+                <span>Địa chỉ IP hiện tại :</span>
+                <span class="total1">127.0.0.1</span>
+                <span>Số lượng truy cập :</span>
+                <span class="total1">...</span>
                 <div class="clearfix"></div>
             </div>
 
