@@ -129,6 +129,7 @@
 <div class="content_bottom-grid">
     <div class="col-md-6 row_4"></div>
     <div class="col-md-6">
+        <h2 style="color: #ffffff; text-align: center; font-style: normal; font-weight: 300 ; margin-top: 70px">Gợi ý ngẫu nhiên sản phẩm</h2>
         <div class="row_5">
             <c:forEach items="${listProductDemo2}" var="product">
                 <div class="col_1_of_3 span_1_of_3">

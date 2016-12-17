@@ -430,7 +430,8 @@ body a{
 h2.m_3 {
   color: #ffffff;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
+	font-weight: 300;
   text-transform: uppercase;
   margin-bottom:5em;
 	transition: all 0.3s ease;
@@ -441,7 +442,8 @@ h2.m_3 {
 h2.m_3:hover{
 	color: #c12f45;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: 300;
 	text-transform: uppercase;
 	margin-bottom:5em;
 
@@ -582,8 +584,7 @@ h2.m_3:hover{
 }
 .content_bottom{
 	padding:5em 0;
-	/*background: #6b5060;*/
-	background: url("../images/background12.jpg");
+	background: url("../images/background12.jpg") center;
 }
 .row_3 img{
 	border:1px solid #E4E0E0;
@@ -593,7 +594,7 @@ h2.m_3:hover{
 }
 .content_bottom-grid{
 	/*background: #f6d867;*/
-	background: url("../images/background14.jpg");
+	background: url("../images/background14.jpg") center;
 }
 .date-comments, .data-comments{
   position: absolute;
@@ -634,7 +635,22 @@ h2.m_3:hover{
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
-  min-height:350px;
+  min-height:520px;
+	border: 8px solid #ffffff;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+.row_4:hover{
+	background: url(../images/pic10.jpg) no-repeat center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	min-height:520px;
+	border: 0 solid #ffffff;
 }
 .menu-recent .date-comments .date span, .blog-index-list .date-comments .date span {
   display: block;
@@ -649,8 +665,7 @@ h2.m_3:hover{
 /*--content--*/
 .content_top{
   padding: 5em 0;
-  /*background: #044336;*/
-	background: url("../images/background13.png");
+	background: url("../images/background13.png") center;
 }
 .content_box {
   border: 5px solid #f7f6f6;
@@ -725,7 +740,8 @@ h2.m_3:hover{
 h3.m_1{
 	color: #6effdd;
 	text-align:center;
-	font-size:1.5em;
+	font-size:2em;
+	font-weight: 300;
 	text-transform:uppercase;
 	margin-bottom: 2em;
 	transition: all 0.3s ease;
@@ -736,13 +752,14 @@ h3.m_1{
 h3.m_1:hover {
 	color: #ffffff;
 	text-align:center;
-	font-size:2em;
+	font-size:2.5em;
+	font-weight: 300;
 	text-transform:uppercase;
 	margin-bottom: 2em;
 }
 /*--footer--*/
 .footer {
-  border-top: 5px solid rgb(4, 67, 54);
+  border-top: 5px solid rgb(1, 48, 45);
   padding-top: 4em;
 }
 .box_3 h3{
