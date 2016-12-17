@@ -58,7 +58,7 @@
         <div class="col-md-3 cart-total">
             <a class="continue" href="${pageContext.request.contextPath}/checkout">Thay đổi thông tin hóa đơn</a>
             <div class="price-details">
-                <h4>-----Thông tin khách hàng-----</h4>
+                <h4>Thông tin khách hàng</h4>
                 <span>Tên khách hàng :</span>
                 <span class="total1">${cartForm.customer.name}</span>
                 <span>Email :</span>

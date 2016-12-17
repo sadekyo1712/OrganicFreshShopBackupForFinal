@@ -58,14 +58,18 @@
         <div class="col-md-3 cart-total">
             <a class="continue" href="${pageContext.request.contextPath}/index">Trở về trang chủ</a>
             <div class="price-details">
-                <h4>------Thông tin hóa đơn------</h4>
-                <span>ID :</span>
+                <h4>Thông tin hóa đơn</h4>
+                <span>ID hóa đơn:</span>
                 <span class="total1">${order.id}</span>
                 <span>Số hóa đơn :</span>
                 <span class="total1">${order.orderNumber}</span>
                 <span>Ngày lập hóa đơn :</span>
                 <span class="total1">${order.orderDate}</span>
-                <h4>-----Thông tin khách hàng-----</h4>
+                <div class="clearfix"></div>
+            </div>
+            <br>
+            <div class="price-details">
+                <h4>Thông tin khách hàng</h4>
                 <span>Tên khách hàng :</span>
                 <span class="total1">${order.customerName}</span>
                 <span>Email :</span>
@@ -77,7 +81,7 @@
                 <span>Giảm giá :</span>
                 <span class="total1">Không có chương trình</span>
                 <span>Chi phí vận chuyển :</span>
-                <span class="total1">Vận chuyển miễn phí</span>
+                <span class="total1">1% giá trị hóa đơn</span>
                 <div class="clearfix"></div>
             </div>
             <ul class="total_price">
@@ -93,7 +97,7 @@
             <div class="total-item">
                 <h3>TÙY CHỌN</h3>
                 <h4>MÃ GIẢM GIÁ</h4>
-                <a class="cpns" href="${pageContext.request.contextPath}/intro">Áp dụng giảm giá</a>
+                <a class="cpns" href="${pageContext.request.contextPath}/intro">Xem mã giảm giá</a>
             </div>
         </div>
     </div>

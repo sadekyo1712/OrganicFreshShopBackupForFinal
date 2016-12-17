@@ -31,7 +31,7 @@
                 </c:if>
                 <form method="post" action="${pageContext.request.contextPath}/j_spring_security_check">
                     <div>
-                        <span>Tên đăng nhập hoặc địa chỉ email<label>*</label></span>
+                        <span>Tên tài khoản đăng nhập<label>*</label></span>
                         <input type="text" name="username" required/>
                     </div>
                     <div>
