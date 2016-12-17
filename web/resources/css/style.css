@@ -817,19 +817,23 @@ ul.footer_social li a i {
   width: 25px;
   height: 25px;
   display: block;
-  background: url(../images/img_sprite.png)no-repeat;
+	/*background-size: 25px 25px;*/
 }
 ul.footer_social li a i.fb {
-	background-position:-3px -13px;
+	background: url(../images/facebook.jpg) no-repeat center;
+	background-size: 25px 25px;
 }
 ul.footer_social li a i.tw {
-  	background-position:-26px -14px;
+	background: url(../images/facebook.jpg) no-repeat center;
+	background-size: 25px 25px;
 }
 ul.footer_social li a i.google{
-  	background-position:-55px -14px;
+	background: url(../images/facebook.jpg) no-repeat center;
+	background-size: 25px 25px;
 }
 ul.footer_social li a i.instagram{
-  	background-position:-84px -14px;
+	background: url(../images/facebook.jpg) no-repeat center;
+	background-size: 25px 25px;
 }
 ul.footer_social li a i:hover{
 	opacity:0.5;
