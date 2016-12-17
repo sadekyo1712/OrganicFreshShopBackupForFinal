@@ -817,27 +817,58 @@ ul.footer_social li a i {
   width: 25px;
   height: 25px;
   display: block;
-	/*background-size: 25px 25px;*/
 }
 ul.footer_social li a i.fb {
-	background: url(../images/facebook.jpg) no-repeat center;
+	background: url(../images/facebook_4.png) no-repeat center;
+	background-size: 25px 25px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+ul.footer_social li a i.fb:hover {
+	background: url(../images/facebook_5.png) no-repeat center;
 	background-size: 25px 25px;
 }
 ul.footer_social li a i.tw {
-	background: url(../images/facebook.jpg) no-repeat center;
+	background: url(../images/tw.png) no-repeat center;
 	background-size: 25px 25px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+ul.footer_social li a i.tw:hover {
+	background: url(../images/tw_2.png) no-repeat center;
+	background-size: 32px 32px;
 }
 ul.footer_social li a i.google{
-	background: url(../images/facebook.jpg) no-repeat center;
+	background: url(../images/google_4.png) no-repeat center;
+	background-size: 25px 25px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+ul.footer_social li a i.google:hover{
+	background: url(../images/google2.png) no-repeat center;
 	background-size: 25px 25px;
 }
 ul.footer_social li a i.instagram{
-	background: url(../images/facebook.jpg) no-repeat center;
+	background: url(../images/insta8.png) no-repeat center;
+	background-size: 25px 25px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+ul.footer_social li a i.instagram:hover{
+	background: url(../images/insta3.png) no-repeat center;
 	background-size: 25px 25px;
 }
-ul.footer_social li a i:hover{
-	opacity:0.5;
-}
+/*ul.footer_social li a i:hover{*/
+	/*opacity:0.5;*/
+/*}*/
 .copy{
 	text-align:center;
 }
