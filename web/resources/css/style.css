@@ -727,14 +727,16 @@ h2.m_3:hover{
 }
 .mask1 {
   position: absolute;
-  top: 20px;
+  top: 0;
 }
 .info {
    display: block;
-	background: url(../images/label_new.png) no-repeat;
-	text-indent: -9999px;
-	width: 75px;
-	height: 75px;
+	background: url(../images/label.png) no-repeat;
+	background-size: 75px 60px;
+	margin-bottom: 10px;
+	/*text-indent: -9999px;*/
+	width: 80px;
+	height: 80px;
 }
 .content_box h4{
 	font-size:1.1em;
@@ -949,7 +951,7 @@ ul.footer_social li a i.instagram:hover{
 }
 .w_nav1 h4{
 	text-transform:uppercase;
-	color: #589D3E;
+	color: #3bc69c;
 	font-size: 1em;
 	margin-bottom: 5px;
 }
@@ -1048,9 +1050,9 @@ ul.footer_social li a i.instagram:hover{
 }
 .sky-form h4{
 	margin-top: 10px;
-	background: #ECECEC;
+	background: #01302d;
 	padding: 10px 20px;
-	color: #333333;
+	color: #ffffff;
 	text-transform: uppercase;
 	margin-bottom: 0;
 	font-size:16px;

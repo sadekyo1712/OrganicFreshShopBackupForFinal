@@ -26,7 +26,6 @@
 <div class="container">
     <div class="women_main">
         <div class="col-md-9 w_content">
-            <%--old class women--%>
             <div class="women">
                 <a href="${pageContext.request.contextPath}/product_list">
                     <h4>Danh mục sản phẩm - <span>${totalProduct} sản phẩm &nbsp;</span></h4>
@@ -70,19 +69,15 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="size_2">
-                                <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
+                                <div>Qty : <input title="Must integer value, ex: 2,3,4..." form="buy_product${status.index}" type="text" name="quantity"
+                                                  class="item_quantity quantity_1" value="1"
+                                                  pattern="[1-9][\d]*" required/> kg</div>
                                 <div class="size_2-left">
-                                    <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}">
-                                        <input type="button" class="item_add add3" value=""/>
-                                    </a>
+                                    <form id="buy_product${status.index}" action="${pageContext.request.contextPath}/buy_product" method="get">
+                                        <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                                        <input type="submit" class="item_add add3" value="">
+                                    </form>
                                 </div>
-                                <%--<div class="size_2-right">--%>
-                                    <%--<security:authorize access="hasAnyRole('ROLE_MANAGER')">--%>
-                                        <%--<a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">--%>
-                                            <%--<input type="button" class="item_add edit3" value=""/>--%>
-                                        <%--</a>--%>
-                                    <%--</security:authorize>--%>
-                                <%--</div>--%>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -112,19 +107,15 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="size_2">
-                                <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
+                                <div>Qty : <input title="Must integer value, ex: 2,3,4..." form="buy_product${status.index}" type="text" name="quantity"
+                                                  class="item_quantity quantity_1" value="1"
+                                                  pattern="[1-9][\d]*" required/> kg</div>
                                 <div class="size_2-left">
-                                    <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}">
-                                        <input type="button" class="item_add add3" value=""/>
-                                    </a>
+                                    <form id="buy_product${status.index}" action="${pageContext.request.contextPath}/buy_product" method="get">
+                                        <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                                        <input type="submit" class="item_add add3" value="">
+                                    </form>
                                 </div>
-                                <%--<div class="size_2-right">--%>
-                                    <%--<security:authorize access="hasAnyRole('ROLE_MANAGER')">--%>
-                                        <%--<a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">--%>
-                                            <%--<input type="button" class="item_add edit3" value=""/>--%>
-                                        <%--</a>--%>
-                                    <%--</security:authorize>--%>
-                                <%--</div>--%>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -151,19 +142,15 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="size_2">
-                            <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
+                            <div>Qty : <input title="Must integer value, ex: 2,3,4..." form="buy_product${status.index}" type="text" name="quantity"
+                                              class="item_quantity quantity_1" value="1"
+                                              pattern="[1-9][\d]*" required/> kg</div>
                             <div class="size_2-left">
-                                <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}">
-                                    <input type="button" class="item_add add3" value=""/>
-                                </a>
+                                <form id="buy_product${status.index}" action="${pageContext.request.contextPath}/buy_product" method="get">
+                                    <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                                    <input type="submit" class="item_add add3" value="">
+                                </form>
                             </div>
-                            <%--<div class="size_2-right">--%>
-                                <%--<security:authorize access="hasAnyRole('ROLE_MANAGER')">--%>
-                                    <%--<a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">--%>
-                                        <%--<input type="button" class="item_add edit3" value=""/>--%>
-                                    <%--</a>--%>
-                                <%--</security:authorize>--%>
-                            <%--</div>--%>
                             <div class="clearfix"></div>
                         </div>
                     </div>
