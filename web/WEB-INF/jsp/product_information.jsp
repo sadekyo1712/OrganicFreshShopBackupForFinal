@@ -223,7 +223,7 @@
             </li>
             <li class="item3">
                 <a href="#"><img src="<c:url value="/resources/images/product_arrow.png" />">Đánh giá</a>
-                <ul>
+                <ul style="color: #ffffff">
                     <li><img src="<c:url value="/resources/images/ava1.jpg" />" class="img-responsive" alt="" width="40" height="40" >Ăn khá ngon !!!!</li>
                     <li><img src="<c:url value="/resources/images/ava2.jpg" />" class="img-responsive" alt="" width="40" height="40" >Vị rất dở chất lượng phục vụ không tốt.</li>
                     <li><img src="<c:url value="/resources/images/ava3.jpg" />" class="img-responsive" alt="" width="40" height="40" >Thanh toán rất khó khăn.</li>
@@ -232,9 +232,9 @@
             <li class="item4">
                 <a href="#"><img src="<c:url value="/resources/images/product_arrow.png" />">Các trang tham khảo</a>
                 <ul>
-                    <li class="subitem2">
-                        &nbsp;&nbsp;---><a href="http://rausachonline.vn/">Rau sạch online</a><br>
-                        &nbsp;&nbsp;---><a href="https://www.facebook.com/CuaHangRauSachOnline/">Cửa hàng rau sạch online </a><br>
+                    <li class="subitem2" style="color: #ffffff">
+                        &nbsp;&nbsp;---><a href="http://rausachonline.vn/" style="color: #ffffff">Rau sạch online</a><br>
+                        &nbsp;&nbsp;---><a href="https://www.facebook.com/CuaHangRauSachOnline/" style="color: #ffffff">Cửa hàng rau sạch online </a><br>
                     </li>
                 </ul>
             </li>

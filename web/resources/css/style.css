@@ -672,6 +672,15 @@ h2.m_3:hover{
   border: 5px solid #f7f6f6;
   text-align: center;
   padding-bottom: 1em;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.content_box:hover {
+	border: 3px solid #01302d;
+	text-align: center;
+	padding-bottom: 0;
 }
 .view {
    overflow: hidden;
