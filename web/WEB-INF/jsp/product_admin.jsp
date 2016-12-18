@@ -86,7 +86,7 @@
                             <form:option value="/resources/images/background.jpg">Lựa chọn hình ảnh demo sản phẩm</form:option>
                             <form:option value="/resources/images/spring.jpg">DEMO SPRING 1</form:option>
                             <form:option value="/resources/images/spring2.jpg">DEMO SPRING 2</form:option>
-                            <form:option value="/resources/images/spring3.jpg">DEMO SPRING 3</form:option>
+                            <form:option value="/resources/images/spring3.png">DEMO SPRING 3</form:option>
                             <form:option value="/resources/images/1.jpg">DEMO PICTURE 1</form:option>
                             <form:option value="/resources/images/2.jpg">DEMO PICTURE 2</form:option>
                             <form:option value="/resources/images/3.jpg">DEMO PICTURE 3</form:option>

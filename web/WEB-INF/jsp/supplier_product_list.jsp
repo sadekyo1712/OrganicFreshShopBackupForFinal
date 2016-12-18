@@ -53,7 +53,7 @@
                                 <div class="view view-fifth">
                                     <img src="<c:url value="${product.uri}" />" class="img-responsive" alt=""/>
                                     <div class="mask1">
-                                        <div class="info"></div>
+                                        <div class="info2"></div>
                                     </div>
                             </a>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="view view-fifth">
                             <img src="<c:url value="${product.uri}" />" class="img-responsive" alt=""/>
                             <div class="mask1">
-                                <div class="info"></div>
+                                <div class="info2"></div>
                             </div>
                     </a>
                 </div>
@@ -124,7 +124,7 @@
                     <div class="view view-fifth">
                         <img src="<c:url value="${product.uri}" />" class="img-responsive" alt=""/>
                         <div class="mask1">
-                            <div class="info"></div>
+                            <div class="info2"></div>
                         </div>
                 </a>
             </div>

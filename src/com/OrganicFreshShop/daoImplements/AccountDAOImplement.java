@@ -3,12 +3,14 @@ package com.OrganicFreshShop.daoImplements;
 import com.OrganicFreshShop.dao.AccountDAO;
 import com.OrganicFreshShop.mapper.AccountMapper;
 import com.OrganicFreshShop.model.Account;
+import com.OrganicFreshShop.model.PaginatorResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
+import java.util.List;
 
 /**
  * Created by root on 11/22/16.
@@ -37,6 +39,25 @@ public class AccountDAOImplement implements AccountDAO {
             return jdbcTemplate.queryForObject( SQL_FETCH_ACCOUNT, new Object[]{ username }, new AccountMapper() );
         } catch ( Exception ex ) {
             System.out.println("Error when fetch Account in fetchAccount()");
+        }
+        return null;
+    }
+
+    @Override
+    public PaginatorResult<Account> listAccountPaginatorResult(int page, int resultEachPage, int maxNavigationPage) {
+        String SQL_FETCH_ACCOUNT_PAGINATOR = "select * from Account limit ?, ?";
+        String SQL_COUNT_TOTAL_RECORD = "select count(*) from Account";
+        int fromIndex = ( page - 1 ) * resultEachPage;
+        try {
+            List<Account> list = jdbcTemplate.query( SQL_FETCH_ACCOUNT_PAGINATOR,
+                    new Object[]{ fromIndex, resultEachPage }, new AccountMapper() );
+            int totalRecord = jdbcTemplate.queryForObject( SQL_COUNT_TOTAL_RECORD, Integer.class );
+            PaginatorResult<Account> result =
+                    new PaginatorResult<>( page, resultEachPage, maxNavigationPage, list, totalRecord );
+            result.setTotalRecord( totalRecord );
+            return result;
+        } catch ( Exception ex ) {
+            System.out.println("Error in listAccountPaginatorResult()");
         }
         return null;
     }

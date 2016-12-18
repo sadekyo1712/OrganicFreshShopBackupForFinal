@@ -738,6 +738,15 @@ h2.m_3:hover{
 	width: 80px;
 	height: 80px;
 }
+.info2 {
+	display: block;
+	background: url(../images/label_new_5.png) no-repeat;
+	background-size: 60px 60px;
+	margin-bottom: 10px;
+	/*text-indent: -9999px;*/
+	width: 80px;
+	height: 80px;
+}
 .content_box h4{
 	font-size:1.1em;
 }
@@ -1471,6 +1480,7 @@ ul.footer_social li a i.instagram:hover{
 }
 .edit3:hover{
 	background: url(../images/edit10.png) no-repeat center rgb(255, 255, 255);
+	border: 2px solid #000000;
 	background-size: 32px 32px;
 }
 .box_1-cart {
@@ -2711,6 +2721,46 @@ a.order {
 }
 a.order:hover{
 	background:orange;
+}
+input[type="submit"].set_up {
+	background: #1d462a;
+	padding: 10px 20px;
+
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: 600;
+	text-align: center;
+	margin:3em 0;
+	border: 0 solid #ffffff;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+input[type="submit"].set_up:hover {
+	background:#439e5f;
+}
+input[type="submit"].set_up2 {
+	background: #642323;
+	padding: 10px 20px;
+
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: 600;
+	text-align: center;
+	margin:3em 0;
+	border: 0 solid #ffffff;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+input[type="submit"].set_up2:hover {
+	background: #c14344;
 }
 .save-order {
 	background:#333;

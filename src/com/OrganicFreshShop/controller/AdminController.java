@@ -104,7 +104,7 @@ public class AdminController {
     @RequestMapping( value = "/order_list", method = RequestMethod.GET )
     public String orderList( ModelMap modelMap, HttpServletRequest request,
                              @RequestParam( value = "page", defaultValue = "1") String pageString ) {
-        int page = 1;
+        int page;
         try {
             page = Integer.parseInt( pageString );
         } catch ( Exception ex ) {
@@ -120,6 +120,69 @@ public class AdminController {
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
         System.out.println("In order_list page with order list : " + result ) ;
         return "order_list";
+    }
+
+    @RequestMapping( value = "/account_list", method = RequestMethod.GET )
+    public String accountList( ModelMap modelMap, HttpServletRequest request,
+                               @RequestParam( value = "page", defaultValue = "1") String pageString ) {
+        int page;
+        try {
+            page = Integer.parseInt( pageString );
+        } catch ( Exception ex ) {
+            System.out.println("Error when cast page number in account_list");
+            ex.printStackTrace();
+            return "error";
+        }
+        final int maxResult = 7;
+        final int maxNavigationPage = 10;
+        PaginatorResult<Account> result =
+                accountDAOImplement.listAccountPaginatorResult( page, maxResult, maxNavigationPage );
+        modelMap.addAttribute( "offset", ( ( page - 1 ) * maxResult ) );
+        modelMap.addAttribute( "paginatorResult", result );
+        modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
+        System.out.println("In account_list page with account list : " + result ) ;
+        return "account_list";
+    }
+
+    @RequestMapping( value = "/account_detail_info", method = RequestMethod.GET )
+    public String accountDetail( ModelMap modelMap, HttpServletRequest request,
+                                 @RequestParam( value = "username") String username ) {
+
+        Account account = null;
+        if ( username != null ) {
+            account = accountDAOImplement.fetchAccount( username );
+        }
+        if ( account == null )
+            return "error";
+        modelMap.addAttribute( "user", account );
+        modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
+        return "admin_account_detail";
+    }
+
+    @RequestMapping( value = "/account_detail_info", method = RequestMethod.POST )
+    public String changeStateAccount( ModelMap modelMap, HttpServletRequest request,
+                                      @RequestParam( value = "username") String username,
+                                      @RequestParam( value = "active") String active ) {
+        Account account;
+        try {
+            account = accountDAOImplement.fetchAccount( username );
+        } catch ( Exception ex ) {
+            ex.printStackTrace();
+            return "error";
+        }
+        boolean state = Boolean.parseBoolean( active );
+        boolean accountState = account.isActive();
+        if ( state != accountState ) {
+            account.setActive( state );
+            try {
+                accountDAOImplement.updateAccount( account );
+            } catch ( Exception ex ) {
+                ex.printStackTrace();
+                return "error";
+            }
+        }
+        modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
+        return "redirect:/account_list";
     }
 
     @RequestMapping( value = "/supplier_product_list")
