@@ -27,28 +27,9 @@
     <div class="women_main">
         <div class="col-md-9 w_content">
             <%--old class women--%>
-            <div class="w_nav">
+            <div class="women">
                 <a href="${pageContext.request.contextPath}/product_list">
-                    <h4>---------------------------------------> Danh mục sản phẩm - <span>${totalProduct} sản phẩm &nbsp;</span>
-                        <c:if test="${paginatorProduct.totaLPage == 1}">
-                            ---------------
-                        </c:if>
-                        <c:if test="${paginatorProduct.totaLPage > 1}">
-                            -&nbsp;Trang&nbsp;
-                        </c:if>
-                        <span>
-                            <c:if test="${paginatorProduct.totaLPage > 1}">
-                                <c:forEach items="${paginatorProduct.navigateBar}" var="page">
-                                    <c:if test="${page != -1}">
-                                        <a href="${pageContext.request.contextPath}/product_list?page=${page}&name=${pageContext.request.getParameter("name")}">${page} </a>|
-                                    </c:if>
-                                    <c:if test="${page == -1}">
-                                        <span>... |</span>
-                                    </c:if>
-                                </c:forEach>
-                            </c:if>
-                        </span>
-                    </h4>
+                    <h4>Danh mục sản phẩm - <span>${totalProduct} sản phẩm &nbsp;</span></h4>
                 </a>
                 <ul class="w_nav">
                     <li>Sắp xếp :</li>
@@ -190,6 +171,24 @@
                 </c:if>
             </c:forEach>
 <div class="clearfix"></div>
+    <div class="women_bottom">
+        <c:if test="${paginatorProduct.totaLPage > 1}">
+            <span>
+                TRANG&nbsp;
+                <c:if test="${paginatorProduct.totaLPage > 1}">
+                    <c:forEach items="${paginatorProduct.navigateBar}" var="page">
+                        <c:if test="${page != -1}">
+                            <a href="${pageContext.request.contextPath}/product_list?page=${page}&name=${pageContext.request.getParameter("name")}">${page} </a>|
+                        </c:if>
+                        <c:if test="${page == -1}">
+                            <span>... |</span>
+                        </c:if>
+                    </c:forEach>
+                </c:if>
+            </span>
+            <div class="clearfix"></div>
+        </c:if>
+    </div>
 </div>
 </div>
 
