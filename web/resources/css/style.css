@@ -1414,7 +1414,8 @@ ul.footer_social li a i.instagram:hover{
 	background:url(../images/plus.png) no-repeat 10px 10px rgb(193, 39, 85);
 }	
 .add3 {
-  background: url(../images/buy.png) no-repeat 7px 6px #003840;
+  background: url(../images/plus_13.png) no-repeat center #3bc69c;
+	background-size: 32px 32px;
   text-align: center;
   font-size: 11px;
   border-top-left-radius: 50%;
@@ -1426,15 +1427,20 @@ ul.footer_social li a i.instagram:hover{
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
   color: #ffffff;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 0.85em;
-  border: none;
+  border: 0 solid #ffffff;
   outline: none;
-  margin-left: 60%;
+  margin-left: 110%;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }	
 .add3:hover{
-	background: url(../images/buy.png) no-repeat 7px 6px rgb(193, 39, 85);
+	background: url(../images/plus_7.png) no-repeat center rgb(232, 88, 88);
+	background-size: 32px 32px;
 }
 .edit3 {
 	background: url(../images/plus.png) no-repeat 7px 6px #792656;
