@@ -58,7 +58,7 @@
             <a class="continue2" href="${pageContext.request.contextPath}/index">Trở về trang chủ</a>
             <div class="price-details">
                 <h4>Thống kê về tài khoản</h4>
-                <span>Lần đăng nhập cuối:</span>
+                <span>Lần cuối đăng nhập:</span>
                 <span class="total1">unknown</span>
                 <span>IP:</span>
                 <span class="total1">127.0.0.1</span>

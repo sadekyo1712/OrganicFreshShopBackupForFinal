@@ -39,7 +39,7 @@
                                     <p>Loại tài khoản : ${account.userRole}</p>
                                 </li>
                                 <li>
-                                    <p>Mật khẩu được mã hóa : TRUE</p>
+                                    <p>Mật khẩu được bảo vệ : TRUE</p>
                                 </li>
                                 <li>
                                     <p>Thuật toán băm : Bcrypt</p>
@@ -63,17 +63,6 @@
                 </div>
             </c:forEach>
                 <div class="women_bottom" style="margin-bottom: 55px; padding: 10px">
-                    <%--<h4>Trang&nbsp;--%>
-                        <%--<c:if test="${paginatorResult.totaLPage > 1}">--%>
-                            <%--<c:forEach items="${paginatorResult.navigateBar}" var="page">--%>
-                                <%--<c:if test="${page != -1}">--%>
-                                    <%--<a href="${pageContext.request.contextPath}/account_list?page=${page}">${page} </a>|--%>
-                                <%--</c:if>--%>
-                                <%--<c:if test="${page == -1}">--%>
-                                    <%--<span>... |</span>--%>
-                                <%--</c:if>--%>
-                            <%--</c:forEach>--%>
-                        <%--</c:if></h4>--%>
                     <c:if test="${paginatorResult.totaLPage > 1}">
                         <span>
                             TRANG&nbsp;
@@ -110,7 +99,6 @@
                 <span class="total1">...</span>
                 <div class="clearfix"></div>
             </div>
-
             <div class="clearfix"></div>
             <a class="order" href="${pageContext.request.contextPath}/intro">Vô hiệu hóa tài khoản</a>
         </div>
