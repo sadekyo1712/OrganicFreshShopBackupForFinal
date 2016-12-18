@@ -825,13 +825,13 @@ ul.footer_social li {
   margin-right: 10px;
 }
 ul.footer_social li a i {
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   display: block;
 }
 ul.footer_social li a i.fb {
 	background: url(../images/facebook_4.png) no-repeat center;
-	background-size: 25px 25px;
+	background-size: 32px 32px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -839,11 +839,11 @@ ul.footer_social li a i.fb {
 }
 ul.footer_social li a i.fb:hover {
 	background: url(../images/facebook_6.png) no-repeat center;
-	background-size: 25px 25px;
+	background-size: 32px 32px;
 }
 ul.footer_social li a i.tw {
 	background: url(../images/tw.png) no-repeat center;
-	background-size: 25px 25px;
+	background-size: 32px 32px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -851,11 +851,11 @@ ul.footer_social li a i.tw {
 }
 ul.footer_social li a i.tw:hover {
 	background: url(../images/tw_2.png) no-repeat center;
-	background-size: 32px 32px;
+	background-size: 40px 40px;
 }
 ul.footer_social li a i.google{
 	background: url(../images/google_4.png) no-repeat center;
-	background-size: 25px 25px;
+	background-size: 32px 32px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -863,19 +863,19 @@ ul.footer_social li a i.google{
 }
 ul.footer_social li a i.google:hover{
 	background: url(../images/google2.png) no-repeat center;
-	background-size: 25px 25px;
+	background-size: 32px 32px;
 }
 ul.footer_social li a i.instagram{
-	background: url(../images/insta2.png) no-repeat center;
-	background-size: 25px 25px;
+	background: url(../images/insta8.png) no-repeat center;
+	background-size: 32px 32px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 }
 ul.footer_social li a i.instagram:hover{
-	background: url(../images/insta11.png) no-repeat center;
-	background-size: 25px 25px;
+	background: url(../images/insta_3.png) no-repeat center;
+	background-size: 32px 32px;
 }
 /*ul.footer_social li a i:hover{*/
 	/*opacity:0.5;*/
@@ -2581,6 +2581,11 @@ p.cart {
 	width: 70%;
   margin-right: 5%;
 }
+.cart-items h1 {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #01302d;
+}
 .cart-sec{
 	
 	margin-bottom:3em;
@@ -2647,10 +2652,10 @@ p.cart {
   	position: absolute;
   	right: 0;
   	top: 0;
-	transition: all 1s ease;
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }
 .close2 {
 	background: url('../images/close12.png') no-repeat center;
@@ -2661,10 +2666,10 @@ p.cart {
 	position: absolute;
 	right: 0;
 	top: 0;
-	transition: all 1s ease;
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }
 .close1:hover{
 	background: url('../images/close16.png') no-repeat center;
