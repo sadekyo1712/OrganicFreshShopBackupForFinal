@@ -2723,7 +2723,7 @@ a.order:hover{
 	background:orange;
 }
 input[type="submit"].set_up {
-	background: #1d462a;
+	background: #439e5f;
 	padding: 10px 20px;
 
 	font-size: 1em;
@@ -2740,10 +2740,10 @@ input[type="submit"].set_up {
 	-o-transition: all 0.3s ease;
 }
 input[type="submit"].set_up:hover {
-	background:#439e5f;
+	background: #29643c;
 }
 input[type="submit"].set_up2 {
-	background: #642323;
+	background: #c14344;
 	padding: 10px 20px;
 
 	font-size: 1em;
@@ -2760,7 +2760,7 @@ input[type="submit"].set_up2 {
 	-o-transition: all 0.3s ease;
 }
 input[type="submit"].set_up2:hover {
-	background: #c14344;
+	background: #762929;
 }
 .save-order {
 	background:#333;
@@ -2828,6 +2828,21 @@ a.continue{
 }
 a.continue:hover{
 	background:#333;
+}
+a.continue2{
+	background:#333;
+	padding:10px 20px;
+
+	font-size:1em;
+	color:#fff;
+	text-decoration:none;
+	display: block;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom:2em;
+}
+a.continue2:hover{
+	background: #01433e;
 }
 ul.total_price{
 	padding: 0;

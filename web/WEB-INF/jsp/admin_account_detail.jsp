@@ -28,7 +28,7 @@
                     </div>
                     <div class="cart-item-info">
                         <h3>
-                            <a href="">Tài khoản ${user.username}</a>
+                            <a>Tài khoản <a style="color: #1483a4">${user.username}</a></a>
                             <span>Loại tài khoản : ${user.userRole}</span>
                         </h3>
                         <ul class="qty">
@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-md-3 cart-total">
-            <a class="continue" href="${pageContext.request.contextPath}/index">Trở về trang chủ</a>
+            <a class="continue2" href="${pageContext.request.contextPath}/index">Trở về trang chủ</a>
             <div class="price-details">
                 <h4>Thống kê về tài khoản</h4>
                 <span>Lần đăng nhập cuối:</span>
@@ -79,14 +79,14 @@
             </ul>
 
             <div class="clearfix"></div>
-            <c:if test="${user.active == true}">
+            <c:if test="${user.active == true && user.userRole != 'MANAGER'}">
                 <form action="${pageContext.request.contextPath}/account_detail_info" method="post">
                     <input title="" name="username" value="${user.username}" class="hidden">
                     <input title="" name="active" value="false" class="hidden">
                     <input type="submit" class="set_up2" value="Vô hiệu hóa tài khoản">
                 </form>
             </c:if>
-            <c:if test="${user.active == false}">
+            <c:if test="${user.active == false && user.userRole != 'MANAGER'}">
                 <form action="${pageContext.request.contextPath}/account_detail_info" method="post">
                     <input title="" name="username" value="${user.username}" class="hidden">
                     <input title="" name="active" value="true" class="hidden">
