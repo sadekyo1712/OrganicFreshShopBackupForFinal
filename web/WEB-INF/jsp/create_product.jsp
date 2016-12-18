@@ -51,11 +51,11 @@
                         <span>Giá sản phẩm<label>*</label></span>
                         <c:if test="${not empty productForm.priceTag}">
                             <form:input path="priceTag" placeholder="${productForm.priceTag}" required="true"
-                                        pattern="[1-9](.[\d]+)?" title="Require number value, ex : 1 / 2 / 1.2 not 01,02,0,..."/>
+                                        pattern="[1-9][\d]*(.[\d]+)?" title="Require number value, ex : 1 / 2 / 1.2 not 01,02,0,..."/>
                         </c:if>
                         <c:if test="${empty productForm.priceTag}">
                             <form:input path="priceTag" required="true" placeholder="Ex: 100000"
-                                        pattern="[1-9](.[\d]+)?" title="Require number value, ex : 1 / 2 / 1.2 not 01,02,0,..."/>
+                                        pattern="[1-9][\d]*(.[\d]+)?" title="Require number value, ex : 1 / 2 / 1.2 not 01,02,0,..."/>
                         </c:if>
                         <span><form:errors path="priceTag"/></span>
                     </div>

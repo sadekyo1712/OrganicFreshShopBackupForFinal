@@ -157,7 +157,7 @@
                 </div>
                 </c:if>
             </c:forEach>
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
     <div class="women_bottom">
         <c:if test="${paginatorProduct.totaLPage > 1}">
             <span>

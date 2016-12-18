@@ -26,29 +26,9 @@
 <div class="container">
     <div class="women_main">
         <div class="col-md-9 w_content">
-            <%--old class women--%>
-            <div class="w_nav">
+            <div class="women">
                 <a href="${pageContext.request.contextPath}/supplier_product_list?user_name=${pageContext.request.userPrincipal.name}">
-                    <h4>------------------------------------------> Sản phẩm đã tạo - <span>${totalProduct} sản phẩm &nbsp;</span>
-                        <c:if test="${paginatorProduct.totaLPage == 1}">
-                            ---------------
-                        </c:if>
-                        <c:if test="${paginatorProduct.totaLPage > 1}">
-                            -&nbsp;Trang&nbsp;
-                        </c:if>
-                        <span>
-                            <c:if test="${paginatorProduct.totaLPage > 1}">
-                                <c:forEach items="${paginatorProduct.navigateBar}" var="page">
-                                    <c:if test="${page != -1}">
-                                        <a href="${pageContext.request.contextPath}/supplier_product_list?user_name=${pageContext.request.userPrincipal.name}&page=${page}">${page} </a>|
-                                    </c:if>
-                                    <c:if test="${page == -1}">
-                                        <span>... |</span>
-                                    </c:if>
-                                </c:forEach>
-                            </c:if>
-                        </span>
-                    </h4>
+                    <h4>Sản phẩm đã tạo - <span>${totalProduct} sản phẩm &nbsp;</span></h4>
                 </a>
                 <ul class="w_nav">
                     <li>Sắp xếp :</li>
@@ -89,18 +69,12 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="size_2">
-                            <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
                             <div class="size_2-left">
-                                <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}&user_name=${pageContext.request.userPrincipal.name}">
-                                    <input type="button" class="item_add edit3" value=""/>
-                                </a>
-                            </div>
-                            <div class="size_2-right">
-                                <security:authorize access="hasAnyRole('ROLE_MANAGER')">
-                                    <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">
-                                        <input type="button" class="item_add edit3" value=""/>
-                                    </a>
-                                </security:authorize>
+                                <form action="${pageContext.request.contextPath}/product_admin" method="get">
+                                    <input title="" type="text" name="user_name" value="${pageContext.request.userPrincipal.name}" class="hidden">
+                                    <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                                    <input type="submit" class="item_add edit3" value="">
+                                </form>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -131,18 +105,12 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="size_2">
-                    <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
                     <div class="size_2-left">
-                        <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}&user_name=${pageContext.request.userPrincipal.name}">
-                            <input type="button" class="item_add edit3" value=""/>
-                        </a>
-                    </div>
-                    <div class="size_2-right">
-                        <security:authorize access="hasAnyRole('ROLE_MANAGER')">
-                            <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">
-                                <input type="button" class="item_add edit3" value=""/>
-                            </a>
-                        </security:authorize>
+                        <form action="${pageContext.request.contextPath}/product_admin" method="get">
+                            <input title="" type="text" name="user_name" value="${pageContext.request.userPrincipal.name}" class="hidden">
+                            <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                            <input type="submit" class="item_add edit3" value="">
+                        </form>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -170,18 +138,12 @@
                 <div class="clearfix"></div>
             </div>
             <div class="size_2">
-                <div>Qty : <input type="text" class="item_quantity quantity_1" value="1"/> kg</div>
                 <div class="size_2-left">
-                    <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}&user_name=${pageContext.request.userPrincipal.name}">
-                        <input type="button" class="item_add edit3" value=""/>
-                    </a>
-                </div>
-                <div class="size_2-right">
-                    <security:authorize access="hasAnyRole('ROLE_MANAGER')">
-                        <a href="${pageContext.request.contextPath}/product_admin?code=${product.code}">
-                            <input type="button" class="item_add edit3" value=""/>
-                        </a>
-                    </security:authorize>
+                    <form action="${pageContext.request.contextPath}/product_admin" method="get">
+                        <input title="" type="text" name="user_name" value="${pageContext.request.userPrincipal.name}" class="hidden">
+                        <input title="" type="text" name="code" value="${product.code}" class="hidden">
+                        <input type="submit" class="item_add edit3" value="">
+                    </form>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -190,6 +152,24 @@
     </c:if>
     </c:forEach>
     <div class="clearfix"></div>
+    <div class="women_bottom">
+        <c:if test="${paginatorProduct.totaLPage > 1}">
+            <span>
+                TRANG&nbsp;
+                <c:if test="${paginatorProduct.totaLPage > 1}">
+                    <c:forEach items="${paginatorProduct.navigateBar}" var="page">
+                        <c:if test="${page != -1}">
+                            <a href="${pageContext.request.contextPath}/supplier_product_list?user_name=${pageContext.request.userPrincipal.name}&page=${page}">${page} </a>|
+                        </c:if>
+                        <c:if test="${page == -1}">
+                            <span>... |</span>
+                        </c:if>
+                    </c:forEach>
+                </c:if>
+            </span>
+            <div class="clearfix"></div>
+        </c:if>
+    </div>
 </div>
 </div>
 
