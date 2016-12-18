@@ -161,9 +161,15 @@
                         <div class="clearfix"></div>
                     </a>
                 </li>
+                <li>
+                    <a href="https://www.instagram.com/"> <i class="s_insta"> </i>
+                        <div class="social_desc">Chia sẻ<br> trên Instagram</div>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
                 <li class="last">
                     <a href="http://google.com/gmail/"> <i class="s_email"> </i>
-                        <div class="social_desc">Giới thiệu<br> cho bạn bè</div>
+                        <div class="social_desc">Email giới thiệu<br> cho bạn bè</div>
                         <div class="clearfix"></div>
                     </a>
                 </li>
