@@ -2638,18 +2638,41 @@ p.cart {
 	font-weight:400;
 } 
 
-.close1,.close2{
-  background: url('../images/close_1.png') no-repeat 0px 0px;
-  cursor: pointer;
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+.close1 {
+  	background: url('../images/close12.png') no-repeat center;
+	background-size: 42px 42px;
+	cursor: pointer;
+  	width: 50px;
+  	height: 50px;
+  	position: absolute;
+  	right: 0;
+  	top: 0;
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+}
+.close2 {
+	background: url('../images/close12.png') no-repeat center;
+	background-size: 42px 42px;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+}
+.close1:hover{
+	background: url('../images/close16.png') no-repeat center;
+	background-size: 42px 42px;
+}
+.close2:hover{
+	background: url('../images/close16.png') no-repeat center;
+	background-size: 42px 42px;
 }
 .cart-header {  
   position: relative;  
