@@ -24,7 +24,7 @@
             <div class="cart-header2">
                 <div class="cart-sec simpleCart_shelfItem">
                     <div class="cart-item cyc">
-                        <img src="<c:url value="/resources/images/user3.jpg" />" class="img-responsive" alt=""/>
+                        <img src="<c:url value="/resources/images/user15.png" />" class="img-responsive" alt=""/>
                     </div>
                     <div class="cart-item-info">
                         <h3>

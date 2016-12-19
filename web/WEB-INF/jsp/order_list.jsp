@@ -51,17 +51,24 @@
                     </div>
                 </div>
             </c:forEach>
-            <h4>Trang&nbsp;
-            <c:if test="${paginatorResult.totaLPage > 1}">
-                <c:forEach items="${paginatorResult.navigateBar}" var="page">
-                    <c:if test="${page != -1}">
-                        <a href="${pageContext.request.contextPath}/order_list?page=${page}">${page} </a>|
-                    </c:if>
-                    <c:if test="${page == -1}">
-                        <span>... |</span>
-                    </c:if>
-                </c:forEach>
-            </c:if></h4>
+            <div class="women_bottom" style="margin-bottom: 55px; padding: 10px">
+                <c:if test="${paginatorResult.totaLPage > 1}">
+                        <span>
+                            <span style="color: #319e46">TRANG</span>&nbsp;
+                            <c:if test="${paginatorResult.totaLPage > 1}">
+                                <c:forEach items="${paginatorResult.navigateBar}" var="page">
+                                    <c:if test="${page != -1}">
+                                        <a href="${pageContext.request.contextPath}/account_list?page=${page}">${page} </a>|
+                                    </c:if>
+                                    <c:if test="${page == -1}">
+                                        <span>... |</span>
+                                    </c:if>
+                                </c:forEach>
+                            </c:if>
+                        </span>
+                    <div class="clearfix"></div>
+                </c:if>
+            </div>
         </div>
 
         <div class="col-md-3 cart-total">

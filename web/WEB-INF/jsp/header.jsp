@@ -273,7 +273,7 @@
                                                     <li><a href="${pageContext.request.contextPath}/order_list">Danh sách hóa đơn</a></li>
                                                 </security:authorize>
                                                 <security:authorize access="hasAnyRole('ROLE_MANAGER')">
-                                                    <li><a href="${pageContext.request.contextPath}/intro">Danh sách tài khoản</a></li>
+                                                    <li><a href="${pageContext.request.contextPath}/account_list">Danh sách tài khoản</a></li>
                                                     <li><a href="${pageContext.request.contextPath}/intro">Tạo bài viết mới</a></li>
                                                     <li><a href="${pageContext.request.contextPath}/intro">Xem các bài đăng</a></li>
                                                 </security:authorize>

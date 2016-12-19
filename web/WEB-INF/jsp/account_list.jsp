@@ -25,7 +25,7 @@
                 <div class="cart-header2">
                     <div class="cart-sec simpleCart_shelfItem">
                         <div class="cart-item cyc">
-                            <img src="<c:url value="/resources/images/user3.jpg"/>" class="img-responsive" alt=""/>
+                            <img src="<c:url value="/resources/images/user13.png"/>" class="img-responsive" alt=""/>
                         </div>
                         <div class="cart-item-info">
                             <h3>
@@ -65,7 +65,7 @@
                 <div class="women_bottom" style="margin-bottom: 55px; padding: 10px">
                     <c:if test="${paginatorResult.totaLPage > 1}">
                         <span>
-                            TRANG&nbsp;
+                            <span style="color: #319e46">TRANG</span>&nbsp;
                             <c:if test="${paginatorResult.totaLPage > 1}">
                                 <c:forEach items="${paginatorResult.navigateBar}" var="page">
                                     <c:if test="${page != -1}">
