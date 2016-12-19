@@ -63,7 +63,7 @@ public class ProductDAOImplement implements ProductDAO {
                     new ProductMapper() );
             return new PaginatorResult<>( page, resultEachPage, maxNavigationPage, list, totalRecord );
         } catch ( Exception ex ) {
-//            Preapared
+//            Prepared
         }
         return null;
     }
@@ -99,7 +99,7 @@ public class ProductDAOImplement implements ProductDAO {
         try {
             return jdbcTemplate.query( SQL_FETCH_ALL_PRODUCT, new ProductMapper() );
         } catch ( Exception ex ) {
-//            Prepapred
+//            Prepared
         }
         return null;
     }
@@ -142,7 +142,7 @@ public class ProductDAOImplement implements ProductDAO {
             return jdbcTemplate.query( SQL_FETCH_ALL_PRODUCT_MATCH_NAME,
                     new Object[]{ namePattern }, new ProductMapper() );
         } catch ( Exception ex ) {
-//            Preapared
+//            Prepared
         }
         return null;
     }

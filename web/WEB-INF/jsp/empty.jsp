@@ -17,7 +17,7 @@
 <div class="single_top_empty">
     <div class="container">
         <div class="error-404 text-center">
-            <h6>_____________________________</h6>
+            <h6></h6>
             <p>Bạn chưa tạo sản phẩm nào !</p>
             <a class="b-home" href="${pageContext.request.contextPath}/create_product">Tạo sản phẩm mới</a>
         </div>

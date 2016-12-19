@@ -18,7 +18,7 @@
 <div class="single_top_404">
     <div class="container">
         <div class="error-404 text-center">
-            <h6>___________________________________________</h6>
+            <h6></h6>
             <p>Rất tiếc trang không tìm thấy, xin lỗi bạn vì sự bất tiện này</p>
             <a class="b-home" href="${pageContext.request.contextPath}/index">Quay lại trang chủ nhé :)</a>
         </div>

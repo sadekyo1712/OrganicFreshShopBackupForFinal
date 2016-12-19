@@ -155,7 +155,7 @@
     <div class="women_bottom">
         <c:if test="${paginatorProduct.totaLPage > 1}">
             <span>
-                TRANG&nbsp;
+                <span style="color: #319e46">TRANG</span>&nbsp;
                 <c:if test="${paginatorProduct.totaLPage > 1}">
                     <c:forEach items="${paginatorProduct.navigateBar}" var="page">
                         <c:if test="${page != -1}">

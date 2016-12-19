@@ -65,52 +65,6 @@
                     </li>
                 </ul>
             </c:if>
-            <%--<ul>--%>
-            <%--<c:if test="${pageContext.request.userPrincipal.name != null}">--%>
-            <%--<li>--%>
-            <%--&nbsp;Xin chào&nbsp;--%>
-            <%--<a href="${pageContext.request.contextPath}/account_info">--%>
-            <%--${pageContext.request.userPrincipal.name}--%>
-            <%--</a>--%>
-            <%--&nbsp;quay trở lại với OrganikShop&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/account_change_info?user_name=${pageContext.request.userPrincipal.name}">--%>
-            <%--Thay đổi thông tin tài khoản</a>&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/logout">Đăng xuất</a>--%>
-            <%--</li>--%>
-            <%--</c:if>--%>
-            <%--</ul>--%>
-            <%--<ul>--%>
-            <%--<security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">--%>
-            <%--Dành cho Người quản lý và Nhân viên--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/order_list">Danh sách hóa đơn</a>&nbsp;&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--</security:authorize>--%>
-            <%--<security:authorize access="hasAnyRole('ROLE_MANAGER')">--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/product_admin">Sửa thông tin sản phẩm</a>&nbsp;&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--</security:authorize>--%>
-            <%--<security:authorize access="hasAnyRole('ROLE_MANAGER')">--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/create_product">Tạo sản phẩm mới</a>&nbsp;&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--</security:authorize>--%>
-            <%--<security:authorize access="hasAnyRole('ROLE_SUPPLIER')">--%>
-            <%--Dành cho Nhà cung cấp--%>
-            <%--<li>--%>
-            <%--Nhà cung cấp :--%>
-            <%--<a href="${pageContext.request.contextPath}/create_product"> thêm sản phẩm mới</a>&nbsp;&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--<li>--%>
-            <%--<a href="${pageContext.request.contextPath}/supplier_product_list?user_name=${pageContext.request.userPrincipal.name}"> xem sản phẩm đã tạo</a>&nbsp;&nbsp;|&nbsp;--%>
-            <%--</li>--%>
-            <%--</security:authorize>--%>
-            <%--</ul>--%>
             <c:if test="${pageContext.request.userPrincipal.name == null}">
                 <ul>
                     <li class="active"><a href="${pageContext.request.contextPath}/login">Đăng nhập</a></li>
@@ -175,45 +129,6 @@
                         </div>
                     </li>
                     <li><a class="color1" href="${pageContext.request.contextPath}/index_single">Blog</a></li>
-                    <%--<li class="grid"><a class="color1" href="${pageContext.request.contextPath}/index">Cẩm nang Organik</a>--%>
-                    <%--<div class="megapanel">--%>
-                    <%--<div class="row">--%>
-                    <%--<div class="col1">--%>
-                    <%--<div class="h_nav">--%>
-                    <%--<ul>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/index">Cách trồng rau</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/index">Kinh nghiệm làm vườn</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/index">Vườn đẹp</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/index">Mẹo vặt</a></li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--<div class="col1">--%>
-                    <%--<div class="h_nav">--%>
-                    <%--<ul>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Chậu và kệ trồng các loại</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Dinh dưỡng cho cây</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ làm vườn</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ ươm hạt</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Vườn đứng( vertical garden )</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/product_list">Đất sạch dinh dưỡng</a></li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--<div class="col1">--%>
-                    <%--<div class="h_nav">--%>
-                    <%--<h4>Góc OrganikFresh</h4>--%>
-                    <%--<ul>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/intro">Rau sạch Organic</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/intro">Quy trình sản xuất</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/intro">Kênh phân phối</a></li>--%>
-                    <%--<li><a href="${pageContext.request.contextPath}/intro">OrganikFresh Store</a></li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</li>--%>
                     <li><a class="color4" href="${pageContext.request.contextPath}/about">About</a></li>
                     <li><a class="color5" href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -248,18 +163,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                        <%--<div class="col1">--%>
-                                        <%--<div class="h_nav">--%>
-                                        <%--<ul>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Chậu và kệ trồng các loại</a></li>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Dinh dưỡng cho cây</a></li>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ làm vườn</a></li>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ ươm hạt</a></li>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Vườn đứng( vertical garden )</a></li>--%>
-                                        <%--<li><a href="${pageContext.request.contextPath}/product_list">Đất sạch dinh dưỡng</a></li>--%>
-                                        <%--</ul>--%>
-                                        <%--</div>--%>
-                                        <%--</div>--%>
                                     <div class="col1">
                                         <div class="h_nav">
                                             <h4>Dành cho người quản lý</h4>

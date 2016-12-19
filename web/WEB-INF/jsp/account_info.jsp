@@ -16,9 +16,9 @@
 
 <jsp:include page="header.jsp"/>
 
-<div class="single_top">
+<div class="single_top_account_info">
     <div class="container">
-        <div class="account-info text-left">
+        <div class="account-info text-left" style="margin-top: 77px">
             <h2>Thông tin tài khoản :</h2>
             <ul>
                 <li><span>Tài khoản : </span>${pageContext.request.userPrincipal.name}</li>

@@ -59,21 +59,6 @@ public class MainController {
         }
     }
 
-//    @RequestMapping( value = "/empty")
-//    public String empty() {
-//        return "empty";
-//    }
-//
-//    @RequestMapping( value = "/notfound")
-//    public String notFound() {
-//        return "not_found";
-//    }
-//
-//    @RequestMapping( value = "successful")
-//    public String succ() {
-//        return "successful";
-//    }
-
    @RequestMapping( value = "/index")
     public String home( ModelMap modelMap, HttpServletRequest request ) {
         System.out.println("In Homepage");

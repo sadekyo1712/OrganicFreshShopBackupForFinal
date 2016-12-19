@@ -17,7 +17,7 @@
 <div class="single_top_403">
     <div class="container">
         <div class="error-404 text-center">
-            <h6>____________________________</h6>
+            <h6></h6>
             <p>Ban không thể truy cập trang này</p>
             <a class="b-home" href="${pageContext.request.contextPath}/index">Quay lại trang chủ nhé :)</a>
         </div>

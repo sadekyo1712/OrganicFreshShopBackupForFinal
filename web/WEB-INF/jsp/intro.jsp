@@ -18,7 +18,7 @@
 <div class="single_top_intro">
     <div class="container">
         <div class="error-404 text-center">
-            <h6>_____________________</h6>
+            <h6></h6>
             <p>Đang hoàn thiện.....[90%]</p>
             <a class="b-home" href="${pageContext.request.contextPath}/index">Quay lại trang chủ nhé :)</a>
         </div>

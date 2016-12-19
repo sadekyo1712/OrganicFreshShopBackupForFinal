@@ -1600,22 +1600,22 @@ select.item_Size {
 }
 .single_top_404 {
 	margin:3em 0;
-	background: url("../images/404.svg") 540px 180px no-repeat;
+	background: url("../images/404.svg") center no-repeat;
 }
 .single_top_403 {
 	margin:3em 0;
-	background: url("../images/single_top.jpg") center no-repeat;
+	background: url("../images/single_top7.jpg") center no-repeat;
 	background-size: 533px 400px ;
 }
 .single_top_empty {
 	margin:3em 0;
-	background: url("../images/single_top2.png") #f7f7f7 500px 153px no-repeat;
+	background: url("../images/single_top2.png") #f7f7f7 center no-repeat;
 	background-size: 533px 400px ;
 }
 .single_top_not_found {
 	margin:3em 0;
-	background: url("../images/single_top.png") 560px 153px no-repeat;
-	background-size: 400px 300px ;
+	background: url("../images/single_top.png") center no-repeat;
+	background-size: 533px 400px ;
 }
 .single_top_error {
 	margin:3em 0;
@@ -1623,12 +1623,17 @@ select.item_Size {
 }
 .single_top_intro {
 	margin:3em 0;
-	background: url("../images/single_top2.gif") #f7f7f7 360px 50px no-repeat;
+	background: url("../images/single_top2.gif") #f7f7f7 center no-repeat;
 }
 .single_top_successful {
 	margin:3em 0;
-	background: url("../images/single_top.gif") #f7f7f7 495px 135px no-repeat;
+	background: url("../images/single_top.gif") #f7f7f7 center no-repeat;
 	background-size: 533px 400px ;
+}
+.single_top_account_info {
+	margin:3em 0;
+	background: url("../images/design6.jpg") center no-repeat;
+	min-height: 800px;
 }
 ul.back{
 	padding:0;
@@ -2134,6 +2139,8 @@ h3.m_2{
 	text-transform: uppercase;
 }
 .error-404 h6 {
+	margin-top: 20px;
+	border-top: 4px solid #01302d;
 	font-size: 2em;
 	font-weight: normal;
 	color:#f54d56;
@@ -2169,7 +2176,7 @@ a.b-home:hover{
 .account-info span {
 	font-size: 1em;
 	font-weight: normal;
-	color: #9da1a6;
+	color: #878a8f;
 	text-transform: uppercase;
 }
 .account-info p {

@@ -77,7 +77,6 @@ public class AdminController {
                                      @RequestParam( value = "user_name") String userName ) {
         Account account = accountDAOImplement.fetchAccount( userName );
         System.out.println( account );
-//        account.setUserRole( null );
         modelMap.addAttribute( "account", account );
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
         System.out.println("In account change info HTTP_GET");
@@ -97,7 +96,6 @@ public class AdminController {
         System.out.println( account );
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
         System.out.println("In account_change_info HTTP_POST and is redirecting to home page.....");
-//        return "redirect:/logout";
         return "successful";
     }
 
@@ -231,7 +229,6 @@ public class AdminController {
                                BindingResult bindingResult ) {
         if ( bindingResult.hasErrors() ) {
             System.out.println("Error when binding result");
-//            return "redirect:/error";
         }
         try {
             productDAOImplement.saveProduct( product );

@@ -144,12 +144,6 @@
                             <form:option value="/resources/images/pic7.jpg">DEMO PICTURE 55</form:option>
                             <form:option value="/resources/images/pic8.jpg">DEMO PICTURE 56</form:option>
                         </form:select>
-                        <%--<c:if test="${not empty productForm.uri}">--%>
-                            <%----%>
-                        <%--</c:if>--%>
-                        <%--<c:if test="${empty productForm.uri}">--%>
-                            <%--<form:input path="uri" value="/resources/images/spring.jpg"/>--%>
-                        <%--</c:if>--%>
                     </div>
                     <div class="register-but">
                         <span>Upload hình ảnh sản phẩm</span>

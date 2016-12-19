@@ -17,7 +17,7 @@
 <div class="single_top_error">
     <div class="container">
         <div class="error-404 text-center">
-            <h6>___________________</h6>
+            <h6></h6>
             <p>Đã có lỗi xảy ra</p>
             <a class="b-home" href="${pageContext.request.contextPath}/index">Quay lại trang chủ nhé :)</a>
         </div>
