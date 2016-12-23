@@ -39,16 +39,16 @@
                         <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
                             <div class="shop-holder">
                                 <div class="product-img">
-                                    <a href="${pageContext.request.contextPath}/product_info">
+                                    <a href="${pageContext.request.contextPath}/product_info?code=${product.code}">
                                         <img width="225" height="265" src="<c:url value="${product.uri}"/>"
                                              class="img-responsive" alt="item4"> </a>
                                     <a href="${pageContext.request.contextPath}/buy_product?code=${product.code}" class="button item_add"></a>
                                 </div>
                             </div>
                             <div class="shop-content" style="height: 80px;">
-                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag" style="font-size: 1em; font-weight: 500; color: #3bc69c">Rau củ quả</a></div>
-                                <h3><a href="${pageContext.request.contextPath}/product_info?code=${product.code}" style="font-size: 1em; font-weight: normal; color: #ffffff">${product.name}</a></h3>
-                                <span class="amount item_price"><format:formatNumber value="${product.priceTag}" type="currency"/></span>
+                                <div><a href="${pageContext.request.contextPath}/product_list" rel="tag" style="font-size: 1em; font-weight: 400; color: #174f3e">Rau củ quả</a></div>
+                                <h3><a href="${pageContext.request.contextPath}/product_info?code=${product.code}" style="font-size: 1em; font-weight: normal; color: #000000">${product.name}</a></h3>
+                                <span class="amount item_price" style="font-weight: 500; font-size: 1.5em"><format:formatNumber value="${product.priceTag}" type="currency"/></span>
                             </div>
                         </div>
                     </c:forEach>
@@ -64,7 +64,7 @@
                     <p>Hope you have fun & relax with us.</p>
                     <p></p>
                 </div>
-                <img src="<c:url value="/resources/images/pic9.jpg" />" class="img-responsive" alt=""/>
+                <img src="<c:url value="/resources/images/b5.jpg" />" class="img-responsive" alt=""/>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -79,7 +79,7 @@
             <div class="col-md-6 blog_1">
                 <a href="${pageContext.request.contextPath}/index_single" style="color: #ffffff">
                     <div class="item-inner">
-                        <img src="<c:url value="/resources/images/blog-baner.jpg" />" class="img-responsive" alt=""/>
+                        <img src="<c:url value="/resources/images/blog4.jpg" />" class="img-responsive" alt=""/>
                         <div class="date-comments">
                             <div class="time">
                                 <span class="date">
@@ -96,13 +96,13 @@
                             </div>
                         </div>
                     </div>
-                    <div><h3>Công dụng của rau muống trong chữa bệnh</h3></div>
+                    <div><h3>Chọn mua rau hữu cơ cho bữa cơm gia đình an toàn</h3></div>
                 </a>
             </div>
             <div class="col-md-6 row_2">
-                <a href="${pageContext.request.contextPath}/index_single" style="color: #ffffff">
+                <a href="${pageContext.request.contextPath}/index_single2" style="color: #ffffff">
                     <div class="item-inner">
-                        <img src="<c:url value="/resources/images/blog-baner2.jpg" />" class="img-responsive" alt=""/>
+                        <img src="<c:url value="/resources/images/b14.jpg" />" class="img-responsive" alt=""/>
                         <div class="date-comments">
                             <div class="time">
                                 <span class="date">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div><h3>Sử dụng facebook trong quảng cáo sản phẩm</h3></div>
+                    <div><h3>Sự hấp dẫn trong ẩm thực của các quốc gia</h3></div>
                 </a>
             </div>
             <div class="clearfix"></div>

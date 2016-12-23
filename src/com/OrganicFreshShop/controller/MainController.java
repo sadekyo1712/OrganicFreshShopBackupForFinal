@@ -59,7 +59,7 @@ public class MainController {
         }
     }
 
-   @RequestMapping( value = "/index")
+    @RequestMapping( value = "/index")
     public String home( ModelMap modelMap, HttpServletRequest request ) {
         System.out.println("In Homepage");
         List<Product> list;
@@ -125,9 +125,16 @@ public class MainController {
      */
     @RequestMapping( value = "/index_single")
     public String single( HttpServletRequest request, ModelMap modelMap ) {
-        System.out.println("In index_single page");
+        System.out.println("In index_single blog page");
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
         return "index_single";
+    }
+
+    @RequestMapping( value = "/index_single2")
+    public String single2( HttpServletRequest request, ModelMap modelMap ) {
+        System.out.println("In index_single2 blog page");
+        modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
+        return "index_single2";
     }
 
     /**
@@ -145,7 +152,7 @@ public class MainController {
     }
 
     /**
-     * POST : Luu tai khoan vao co do su lieu
+     * POST : Luu tai khoan vao database
      * @param modelMap
      * @param account
      * @return
@@ -162,7 +169,7 @@ public class MainController {
     }
 
     /**
-     * GET Show login
+     * GET Hien thi trang login
      * @param modelMap
      * @return
      */
@@ -173,6 +180,12 @@ public class MainController {
         return "login";
     }
 
+    /**
+     * Man hinih logout
+     * @param modelMap
+     * @param request
+     * @return
+     */
     @RequestMapping( value = "/logout", method = RequestMethod.GET )
     public String logout( ModelMap modelMap, HttpServletRequest request ) {
         System.out.println("Logout and redirect to homepage");
@@ -180,6 +193,14 @@ public class MainController {
         return "successful";
     }
 
+    /**
+     * Hien thi danh sach sn pham
+     * @param modelMap
+     * @param request
+     * @param searchName : ten san pham can tim
+     * @param page : trang can hien thi
+     * @return
+     */
     @RequestMapping( value = "/product_list")
     public String listProduct( ModelMap modelMap, HttpServletRequest request,
                                @RequestParam( value = "name", defaultValue = "") String searchName,
@@ -201,6 +222,12 @@ public class MainController {
         return "product_list";
     }
 
+    /**
+     * Hien thi trang tao san pham moi
+     * @param modelMap
+     * @param request
+     * @return
+     */
     @RequestMapping( value = "/create_product", method = RequestMethod.GET )
     public String createProduct( ModelMap modelMap, HttpServletRequest request ) {
 
@@ -210,6 +237,15 @@ public class MainController {
         return "create_product";
     }
 
+    /**
+     * Luu san pham moi tao vao database
+     * @param modelMap
+     * @param request
+     * @param username : ten tai khoan tao san pham
+     * @param product : san pham vua tao
+     * @param bindingResult
+     * @return
+     */
     @RequestMapping( value = "/create_product", method = RequestMethod.POST )
     public String createProduct( ModelMap modelMap, HttpServletRequest request,
                                  @RequestParam( value = "user_name") String username,
@@ -234,6 +270,14 @@ public class MainController {
         return "redirect:/supplier_product_list?user_name=" + username ;
     }
 
+    /**
+     * Trang gio hang
+     * @param servletRequest
+     * @param modelMap
+     * @param code : ma san pham
+     * @param quantity : so luong
+     * @return
+     */
     @RequestMapping( value = "/buy_product", method = RequestMethod.GET )
     public String buyProductHandle( HttpServletRequest servletRequest, ModelMap modelMap,
                                     @RequestParam( value = "code", defaultValue = "") String code,
@@ -250,6 +294,13 @@ public class MainController {
         return "redirect:/checkout";
     }
 
+    /**
+     * Xoa san pham khoi ro hang
+     * @param servletRequest
+     * @param modelMap
+     * @param code : ma san pham
+     * @return
+     */
     @RequestMapping( value = "/remove_product")
     public String removeProductHandle( HttpServletRequest servletRequest,
                                        ModelMap modelMap,
@@ -266,6 +317,12 @@ public class MainController {
         return "redirect:/checkout";
     }
 
+    /**
+     * Lam trong ro hang
+     * @param request
+     * @param modelMap
+     * @return
+     */
     @RequestMapping( value = "/empty_cart")
     public String removeCart( HttpServletRequest request, ModelMap modelMap ) {
         Utils.removeCartInSession( request );
@@ -274,9 +331,9 @@ public class MainController {
     }
 
     /**
-     * Gioi thieu thong tin cua mot san pham voi code san pham
+     * Gioi thieu thong tin cua mot san pham
      * @param modelMap
-     * @param code
+     * @param code : ma san pham can hien thi
      * @return
      */
     @RequestMapping( value = "/product_info" , method = RequestMethod.GET )
@@ -329,6 +386,12 @@ public class MainController {
         return "product_information";
     }
 
+    /**
+     * Xem thong tin gio hang
+     * @param servletRequest
+     * @param modelMap
+     * @return
+     */
     @RequestMapping( value = "/checkout", method = RequestMethod.GET )
     public String shoppingCart( HttpServletRequest servletRequest,
                                 ModelMap modelMap ) {
@@ -338,6 +401,13 @@ public class MainController {
         return "checkout";
     }
 
+    /**
+     * Cap nhat thong tin gio hang
+     * @param servletRequest
+     * @param modelMap
+     * @param cartForm : gio hang can cap nhat
+     * @return
+     */
     @RequestMapping( value = "/checkout", method = RequestMethod.POST )
     public String shoppingCartUpdateCart( HttpServletRequest servletRequest,
                                           ModelMap modelMap,
@@ -349,7 +419,12 @@ public class MainController {
         return "redirect:/checkout";
     }
 
-
+    /**
+     * Cap nhat thong tin khach hang
+     * @param servletRequest
+     * @param modelMap
+     * @return
+     */
     @RequestMapping( value = "/checkout_customer", method = RequestMethod.GET )
     public String shoppingCartCustomerForm( HttpServletRequest servletRequest,
                                             ModelMap modelMap ) {
@@ -367,6 +442,14 @@ public class MainController {
         return "customer_info";
     }
 
+    /**
+     * Luu thon tin khach hang trong gio hang
+     * @param servletRequest
+     * @param modelMap
+     * @param customerForm
+     * @param bindingResult
+     * @return
+     */
     @RequestMapping( value = "/checkout_customer", method = RequestMethod.POST )
     public String shoppingCartCustomerSaveInfo(HttpServletRequest servletRequest,
                                                ModelMap modelMap,
@@ -385,6 +468,13 @@ public class MainController {
         return "redirect:/checkout";
     }
 
+    /**
+     * Xac nhan don hang truoc khi thuc hien thanh toan qua cong thanh toan va luu don hang vao
+     * database
+     * @param servletRequest
+     * @param modelMap
+     * @return
+     */
     @RequestMapping( value = "/checkout_confirm", method = RequestMethod.GET )
     public String shoppingCartConfirmReview( HttpServletRequest servletRequest,
                                              ModelMap modelMap ) {
@@ -400,6 +490,12 @@ public class MainController {
         return "order_confirm";
     }
 
+    /**
+     * Luu hoa don vao database va quay tro ve trang chu
+     * @param servletRequest
+     * @param modelMap
+     * @return
+     */
     @RequestMapping( value = "/order_confirm", method = RequestMethod.POST )
     public String shoppingCartConfirmSave( HttpServletRequest servletRequest,
                                            ModelMap modelMap ) {
@@ -421,6 +517,14 @@ public class MainController {
         return "error";
     }
 
+    /**
+     * Upload anh san pham
+     * @param servletRequest
+     * @param servletResponse
+     * @param modelMap
+     * @param code
+     * @throws IOException
+     */
     @RequestMapping( value = "/productImage", method = RequestMethod.GET )
     public void productImage( HttpServletRequest servletRequest,
                               HttpServletResponse servletResponse,
@@ -439,6 +543,14 @@ public class MainController {
         servletResponse.getOutputStream().close();
     }
 
+    /**
+     * Tao anh san pham thong qua URI
+     * @param servletRequest
+     * @param modelMap
+     * @param code
+     * @return
+     * @throws IOException
+     */
     @RequestMapping( value = "/productImageURI", method = RequestMethod.GET )
     public String productImageURI(
             HttpServletRequest servletRequest,

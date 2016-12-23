@@ -54,7 +54,12 @@ public class AdminController {
         }
     }
 
-
+    /**
+     * Thong tin tai khoan hien tai
+     * @param modelMap
+     * @param request
+     * @return
+     */
     @RequestMapping( value = "/account_info", method = RequestMethod.GET )
     public String accountInfo(ModelMap modelMap, HttpServletRequest request) {
 
@@ -72,6 +77,13 @@ public class AdminController {
         return "account_info";
     }
 
+    /**
+     * Thay doi thong tin tai khoan
+     * @param modelMap
+     * @param request
+     * @param userName
+     * @return
+     */
     @RequestMapping( value = "/account_change_info", method = RequestMethod.GET )
     public String accountChangeInfo( ModelMap modelMap, HttpServletRequest request,
                                      @RequestParam( value = "user_name") String userName ) {
@@ -83,6 +95,13 @@ public class AdminController {
         return "account_change_info";
     }
 
+    /**
+     * Luu thong tin tai khoan bi thay doi
+     * @param modelMap
+     * @param request
+     * @param account
+     * @return
+     */
     @RequestMapping( value = "/account_change_info", method = RequestMethod.POST )
     public String saveAccountChange( ModelMap modelMap, HttpServletRequest request,
                                      @ModelAttribute( "account" ) Account account ) {
@@ -99,6 +118,13 @@ public class AdminController {
         return "successful";
     }
 
+    /**
+     * Xem danh sach hoa don
+     * @param modelMap
+     * @param request
+     * @param pageString
+     * @return
+     */
     @RequestMapping( value = "/order_list", method = RequestMethod.GET )
     public String orderList( ModelMap modelMap, HttpServletRequest request,
                              @RequestParam( value = "page", defaultValue = "1") String pageString ) {
@@ -120,6 +146,13 @@ public class AdminController {
         return "order_list";
     }
 
+    /**
+     * Xem danh sach tai khoan
+     * @param modelMap
+     * @param request
+     * @param pageString
+     * @return
+     */
     @RequestMapping( value = "/account_list", method = RequestMethod.GET )
     public String accountList( ModelMap modelMap, HttpServletRequest request,
                                @RequestParam( value = "page", defaultValue = "1") String pageString ) {
@@ -142,6 +175,13 @@ public class AdminController {
         return "account_list";
     }
 
+    /**
+     * Xem thong tin chi tiet cua mot tai khoan
+     * @param modelMap
+     * @param request
+     * @param username
+     * @return
+     */
     @RequestMapping( value = "/account_detail_info", method = RequestMethod.GET )
     public String accountDetail( ModelMap modelMap, HttpServletRequest request,
                                  @RequestParam( value = "username") String username ) {
@@ -157,6 +197,14 @@ public class AdminController {
         return "admin_account_detail";
     }
 
+    /**
+     * Thay doi trang thai tai khoan
+     * @param modelMap
+     * @param request
+     * @param username
+     * @param active
+     * @return
+     */
     @RequestMapping( value = "/account_detail_info", method = RequestMethod.POST )
     public String changeStateAccount( ModelMap modelMap, HttpServletRequest request,
                                       @RequestParam( value = "username") String username,
@@ -183,6 +231,15 @@ public class AdminController {
         return "redirect:/account_list";
     }
 
+    /**
+     * Xem danh sach san pham duoc cung cap boi nha cung cap san pham
+     * @param modelMap
+     * @param request
+     * @param searchName
+     * @param page
+     * @param username
+     * @return
+     */
     @RequestMapping( value = "/supplier_product_list")
     public String listProduct( ModelMap modelMap, HttpServletRequest request,
                                @RequestParam( value = "name", defaultValue = "") String searchName,
@@ -205,6 +262,14 @@ public class AdminController {
         return "supplier_product_list";
     }
 
+    /**
+     * Chinh sua thong tin cua san pham
+     * @param modelMap
+     * @param request
+     * @param code
+     * @param username
+     * @return
+     */
     @RequestMapping( value = "/product_admin", method = RequestMethod.GET )
     public String product( ModelMap modelMap, HttpServletRequest request,
                            @RequestParam( value = "code", defaultValue = "S1")String code,
@@ -222,6 +287,15 @@ public class AdminController {
         return "product_admin";
     }
 
+    /**
+     * Luu thong tin san pham bi chinh sua
+     * @param modelMap
+     * @param request
+     * @param user_name
+     * @param product
+     * @param bindingResult
+     * @return
+     */
     @RequestMapping( value = "/product_admin", method = RequestMethod.POST )
     public String productSave( ModelMap modelMap, HttpServletRequest request,
                                @RequestParam( value = "user_name" ) String user_name,
@@ -243,6 +317,13 @@ public class AdminController {
         return "redirect:/supplier_product_list?user_name=" + user_name ;
     }
 
+    /**
+     * Xem thong tin chi tiet cua mot hoa don voi orderID
+     * @param modelMap
+     * @param request
+     * @param orderID
+     * @return
+     */
     @RequestMapping( value = "/order", method = RequestMethod.GET )
     public String viewOrder( ModelMap modelMap, HttpServletRequest request,
                              @RequestParam( value = "orderID") String orderID ) {

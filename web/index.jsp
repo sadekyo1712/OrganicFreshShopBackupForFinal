@@ -12,12 +12,11 @@
   </head>
   <body>
   <h1>
-    Nếu thấy trang này nghĩa là web server đã được cấu hình chính xác và chạy ổn định
+    Nếu thấy trang này nghĩa là Tomcat đã được cấu hình chính xác và đã hoạt động
   </h1>
   <h2>Click vào đây để truy cập vào trang chủ của OrganikFreshShop</h2>
-  <form action="${pageContext.request.contextPath}/index" method="get" class="hidden">
-    <div><input id="home" type="submit" value="Truy cap vao OrganikFreshShop" class="hidden"/></div>
+  <form action="${pageContext.request.contextPath}/index" method="get">
+    <input id="home" type="submit" value="Truy cập vào OrganikFreshShop.com"/>
   </form>
-  <label for="home">---->Truy cập vào trang chủ OrgShop.vn<----</label>
   </body>
 </html>
