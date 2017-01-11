@@ -204,16 +204,93 @@ public class MainController {
     @RequestMapping( value = "/product_list")
     public String listProduct( ModelMap modelMap, HttpServletRequest request,
                                @RequestParam( value = "name", defaultValue = "") String searchName,
-                               @RequestParam( value = "page", defaultValue = "1") int page ) {
+                               @RequestParam( value = "page", defaultValue = "1") int page,
+                               @RequestParam( value = "category", defaultValue = "") String categoryParam,
+                               @RequestParam( value = "discount", defaultValue = "101") String discountParam,
+                               @RequestParam( value = "type1", defaultValue = "") String type1,
+                               @RequestParam( value = "type2", defaultValue = "") String type2,
+                               @RequestParam( value = "type3", defaultValue = "") String type3,
+                               @RequestParam( value = "type4", defaultValue = "") String type4,
+                               @RequestParam( value = "type5", defaultValue = "") String type5,
+                               @RequestParam( value = "type6", defaultValue = "") String type6,
+                               @RequestParam( value = "type7", defaultValue = "") String type7,
+                               @RequestParam( value = "type8", defaultValue = "") String type8,
+                               @RequestParam( value = "type9", defaultValue = "") String type9,
+                               @RequestParam( value = "source1", defaultValue = "") String source1,
+                               @RequestParam( value = "source2", defaultValue = "") String source2,
+                               @RequestParam( value = "source3", defaultValue = "") String source3,
+                               @RequestParam( value = "source4", defaultValue = "") String source4,
+                               @RequestParam( value = "source5", defaultValue = "") String source5,
+                               @RequestParam( value = "source6", defaultValue = "") String source6,
+                               @RequestParam( value = "source7", defaultValue = "") String source7,
+                               @RequestParam( value = "source8", defaultValue = "") String source8,
+                               @RequestParam( value = "source9", defaultValue = "") String source9 ) {
 
         final int maxResult = 12;
         final int maxNavigationPage = 6;
 
+        int discount = Integer.parseInt( discountParam );
+        String category = null;
+        String[] type = null;
+        String[] source = null;
+        ArrayList<String> tempType = new ArrayList<>();
+        ArrayList<String> tempSource = new ArrayList<>();
+
+        if ( !categoryParam.equals("") )
+            category = categoryParam;
+        if ( !type1.equals("") )
+            tempType.add( type1 );
+        if ( !type2.equals("") )
+            tempType.add( type2 );
+        if ( !type3.equals("") )
+            tempType.add( type3 );
+        if ( !type4.equals("") )
+            tempType.add( type4 );
+        if ( !type5.equals("") )
+            tempType.add( type5 );
+        if ( !type6.equals("") )
+            tempType.add( type6 );
+        if ( !type7.equals("") )
+            tempType.add( type7 );
+        if ( !type8.equals("") )
+            tempType.add( type8 );
+        if ( !type9.equals("") )
+            tempType.add( type9 );
+
+        if ( !source1.equals("") )
+            tempSource.add( source1 );
+        if ( !source2.equals("") )
+            tempSource.add( source2 );
+        if ( !source3.equals("") )
+            tempSource.add( source3 );
+        if ( !source4.equals("") )
+            tempSource.add( source4 );
+        if ( !source5.equals("") )
+            tempSource.add( source5 );
+        if ( !source6.equals("") )
+            tempSource.add( source6 );
+        if ( !source7.equals("") )
+            tempSource.add( source7 );
+        if ( !source8.equals("") )
+            tempSource.add( source8 );
+        if ( !source9.equals("") )
+            tempSource.add( source9 );
+        if ( tempType.size() > 0 ) {
+            type = new String[ tempType.size() ];
+            for ( int i = 0; i < type.length; i++ )
+                type[i] = tempType.get( i );
+        }
+        if ( tempSource.size() > 0 ) {
+            source = new String[ tempSource.size() ];
+            for ( int i = 0; i < source.length; i++ )
+                source[i] = tempSource.get( i );
+        }
+
         PaginatorResult<Product> result =
-                productDAOImplement.findAllProductMatchNamePatternPaginatorResult( page, maxResult,
-                        maxNavigationPage, searchName );
+                productDAOImplement.fetchAllProductsWithConstraintPaginatorResult( page, maxResult,
+                        maxNavigationPage, category, type, source, discount, searchName );
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
-        if ( result == null )
+        if ( result.getTotalRecord() == 0 )
             return "not_found";
         int totalProduct = result.getTotalRecord();
         modelMap.addAttribute( "paginatorProduct", result );

@@ -21,6 +21,7 @@ public class Product {
     private String description;
     private String uri;
     private String createdAccount;
+    private ProductInfo productInfo = null;
 
     public Product() {
 
@@ -125,6 +126,14 @@ public class Product {
 
     public void setCreatedAccount(String createdAccount) {
         this.createdAccount = createdAccount;
+    }
+
+    public ProductInfo getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
     }
 
     @Override

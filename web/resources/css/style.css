@@ -158,8 +158,8 @@ body a{
 	text-decoration:none;
 }
 .logo {
-	border-right: 1px solid #E0E0E0;
-	padding-left:0;
+	border-right: 1px solid #1d462a;
+	padding-left: 12px;
 }
 .logo h1{
 	text-transform: inherit;
@@ -2724,8 +2724,43 @@ a.order {
   text-align: center;
   margin:3em 0;
 }
+a.filter {
+	background:#1483a4;
+	padding: 10px 20px;
+
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: normal;
+	text-align: center;
+	margin:3em 0;
+}
+input[type="submit"].filter {
+	background:#1483a4;
+	padding: 10px 20px;
+
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-weight: normal;
+	text-align: center;
+	margin:3em 0;
+	border:0;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
 a.order:hover{
 	background:orange;
+}
+a.filter:hover{
+	background: #e85858;
+}
+input[type="submit"].filter:hover {
+	background: #01302d;
 }
 input[type="submit"].set_up {
 	background: #439e5f;

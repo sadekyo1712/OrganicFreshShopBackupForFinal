@@ -2,8 +2,10 @@ package com.OrganicFreshShop.daoImplements;
 
 import com.OrganicFreshShop.dao.ProductDAO;
 import com.OrganicFreshShop.mapper.ProductMapper;
+import com.OrganicFreshShop.mapper.ProductsAdditionDetailMapper;
 import com.OrganicFreshShop.model.PaginatorResult;
 import com.OrganicFreshShop.model.Product;
+import com.OrganicFreshShop.model.ProductInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -62,6 +64,107 @@ public class ProductDAOImplement implements ProductDAO {
                     new Object[]{ namePattern, fromIndex, resultEachPage },
                     new ProductMapper() );
             return new PaginatorResult<>( page, resultEachPage, maxNavigationPage, list, totalRecord );
+        } catch ( Exception ex ) {
+//            Prepared
+        }
+        return null;
+    }
+
+    @Override
+    public PaginatorResult<Product> fetchAllProductsWithConstraintPaginatorResult(int page, int resultEachPage,
+                                                                                  int maxNavigationPage, String category,
+                                                                                  String[] type, String[] source,
+                                                                                  int discount, String likename ) {
+
+        if ( category == null && type == null && source == null && discount > 100 ) {
+            return this.findAllProductMatchNamePatternPaginatorResult( page, resultEachPage,
+                    maxNavigationPage, likename );
+        }
+        String SQL_FETCH_PRODUCT_WITH_CONSTRAINT =
+                "select Products.Code, Create_Date, Image, Name, Price, Description, URI, Create_Account " +
+                "from Products inner join Products_Addition_Detail on Products.Code = Products_Addition_Detail.Code where";
+        String SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT =
+                "select Products_Addition_Detail.Code, Category, Type, Source, Discount, Comment, Rate " +
+                "from Products inner join Products_Addition_Detail on Products.Code = Products_Addition_Detail.Code where";
+        String SQL_COUNT_TOTAL_RECORD =
+                "select count(*) " +
+                "from Products inner join Products_Addition_Detail on Products.Code = Products_Addition_Detail.Code where";
+        String category_constraint = "";
+        String type_constraint = "";
+        String source_constraint = "";
+        String discount_constraint = "";
+        if ( discount <= 100 ) {
+            discount_constraint = " Discount>=" + discount;
+        }
+        if ( category != null ) {
+            category_constraint = " Category=" + "'" + category + "'";
+        }
+        if ( type != null && type.length > 0 ) {
+            for ( int i = 0; i < type.length; i++ ) {
+                if ( i == 0 )
+                    type_constraint = " Type=" + "'" + type[i] + "'";
+                else
+                    type_constraint = type_constraint + " or Type=" + "'" + type[i] + "'";
+            }
+        }
+        if ( source != null && source.length > 0 ) {
+            for ( int i = 0; i < source.length; i ++ ) {
+                if ( i == 0 )
+                    source_constraint = " Source=" + "'" + source[i] + "'";
+                else
+                    source_constraint = source_constraint + " or Source=" + "'" + source[i] + "'";
+            }
+        }
+        if ( !category_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + category_constraint + " )";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + category_constraint + " )";
+            SQL_COUNT_TOTAL_RECORD += " (" + category_constraint + " )";
+        }
+        if ( !category_constraint.equals("") && !type_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " and ";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " and ";
+            SQL_COUNT_TOTAL_RECORD += " and ";
+        }
+        if ( !type_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + type_constraint + " )";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + type_constraint + " )";
+            SQL_COUNT_TOTAL_RECORD += " (" + type_constraint + " )";
+        }
+        if ( ( !type_constraint.equals("") || !category_constraint.equals("") ) && !source_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " and ";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " and ";
+            SQL_COUNT_TOTAL_RECORD += " and ";
+        }
+        if ( !source_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + source_constraint + " )";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + source_constraint + " )";
+            SQL_COUNT_TOTAL_RECORD += " (" + source_constraint + " )";
+        }
+        if ( ( !type_constraint.equals("") || !category_constraint.equals("") || !source_constraint.equals("") )
+                && !discount_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " and ";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " and ";
+            SQL_COUNT_TOTAL_RECORD += " and ";
+        }
+        if ( !discount_constraint.equals("") ) {
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + discount_constraint + " ) limit ?, ?";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + discount_constraint + " ) limit ?, ?";
+            SQL_COUNT_TOTAL_RECORD += " (" + discount_constraint + " )";
+        }
+
+        int fromIndex = ( page - 1 ) * resultEachPage;
+        try {
+            List<Product> list = jdbcTemplate.query( SQL_FETCH_PRODUCT_WITH_CONSTRAINT,
+                    new Object[]{ fromIndex, resultEachPage }, new ProductMapper() );
+            List<ProductInfo> listProductInfo = jdbcTemplate.query( SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT,
+                    new Object[]{ fromIndex, resultEachPage }, new ProductsAdditionDetailMapper());
+            int totalRecord = jdbcTemplate.queryForObject( SQL_COUNT_TOTAL_RECORD, Integer.class );
+            for ( int i = 0; i < list.size(); i++ ) {
+                Product product = list.get(i);
+                product.setProductInfo( listProductInfo.get(i) );
+                list.set( i, product );
+            }
+            return new PaginatorResult<>( page, resultEachPage, maxNavigationPage, list, totalRecord ) ;
         } catch ( Exception ex ) {
 //            Prepared
         }
@@ -150,9 +253,13 @@ public class ProductDAOImplement implements ProductDAO {
     @Override
     public Product fetchProduct(String code) {
         String SQL_FETCH_PRODUCT = "select * from Products where Code = ?";
+        String SQL_FETCH_PRODUCT_INFO = "select * from Products_Addition_Detail where Code = ?";
         try {
             Product product = jdbcTemplate.queryForObject( SQL_FETCH_PRODUCT,
                     new Object[]{ code }, new ProductMapper() );
+            ProductInfo productInfo = jdbcTemplate.queryForObject( SQL_FETCH_PRODUCT_INFO,
+                    new Object[]{ code }, new ProductsAdditionDetailMapper() );
+            product.setProductInfo( productInfo );
             return product;
         } catch ( Exception ex ) {
 //            Prepared
