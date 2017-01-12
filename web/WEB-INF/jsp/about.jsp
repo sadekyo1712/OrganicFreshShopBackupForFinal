@@ -22,16 +22,18 @@
             <div class="col-md-8 about_left">
                 <h1>Giới thiệu về chúng tôi </h1>
                 <img src="<c:url value="/resources/images/introduction.jpg" />" class="img-responsive" alt=""/>
-                <p>Chúng tôi là một nhóm sinh viên năm cuối trường đại học Bách Khoa Hà Nội. Chúng tôi muốn
-                    xây dựng website này như một kênh trao đổi thực phẩm hữu cơ sạch và thân thiện với mọi người
-                    đồng thời giúp các bà nội trợ có thêm nguồn tham khảo thực phẩm an toàn cho gia đình mình. Hy vọng
-                    mọi người sẽ yêu thích.</p>
+                <p>Đây là một project đồ án tin học của nhóm sinh viên năm cuối trường đại học
+                    Bách Khoa Hà Nội, website vẫn còn đang trong thời gian hòan thiện do vậy
+                    mong thầy cô và các bạn thông cảm với các chức năng vẫn còn thiếu sót.</p>
                 <div class="faqs">
-                    <h2>Tại sao là chúng tôi ?</h2>
+                    <h2>Why choose us ?</h2>
                     <div class="questions">
                         <h3>1.Chúng tôi có gì thú vị ?</h3>
-                        <p>Thực ra đây là một sản phẩm phi lợi nhuận để kết nối mọi người và mong muốn mang lại
-                            chất lượng cuộc sống tốt hơn nên có lẽ sẽ dễ tiếp cận mọi người hơn.</p>
+                        <p>Thực phẩm bẩn là mối nguy lớn ảnh hưởng đến sức khỏe con người dặc biệt là gây ra ung thư,
+                            và bố tôi cũng vừa mới mất vì ung thư phổi và dạ dày, hơn ai hết tôi hiểu rất rõ sự ảnh hưởng
+                            của nó với con người. Chính vì vậy tôi mong muốn rằng đây có thể trở thành một sản phẩm phi lợi
+                        nhuận nhằm kết nối mọi người trao đổi và khuyến khích sử dụng thực phẩm sạch, tốt cho sức khỏe và
+                        mang lại sự an toàn cho những người thân yêu nhất của bạn - Đại diện nhóm phát triển sadekyo1712</p>
                     </div>
                     <div class="questions">
                         <h3>2.Rau hữu cơ là gì ?</h3>
@@ -76,7 +78,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <h3 class="m_2">Tham khảo một số sản phẩm</h3>
+        <h3 class="m_2">Tham khảo một số sản phẩm đang được trao đổi</h3>
         <div class="container">
             <div class="box_3">
                 <c:forEach items="${listProductDemo}" var="product">

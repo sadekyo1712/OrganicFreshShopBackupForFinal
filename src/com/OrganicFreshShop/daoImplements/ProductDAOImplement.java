@@ -147,10 +147,12 @@ public class ProductDAOImplement implements ProductDAO {
             SQL_COUNT_TOTAL_RECORD += " and ";
         }
         if ( !discount_constraint.equals("") ) {
-            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + discount_constraint + " ) limit ?, ?";
-            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + discount_constraint + " ) limit ?, ?";
+            SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " (" + discount_constraint + " )";
+            SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " (" + discount_constraint + " )";
             SQL_COUNT_TOTAL_RECORD += " (" + discount_constraint + " )";
         }
+        SQL_FETCH_PRODUCT_INFO_WITH_CONSTRAINT += " limit ?, ?";
+        SQL_FETCH_PRODUCT_WITH_CONSTRAINT += " limit ?, ?";
 
         int fromIndex = ( page - 1 ) * resultEachPage;
         try {
@@ -272,12 +274,15 @@ public class ProductDAOImplement implements ProductDAO {
         if ( productForm == null )
             return false;
         String code = productForm.getCode();
+        ProductInfo productInfo;
         Product product = null;
         boolean isNew = false;
         if( code != null )
             product = this.fetchProduct( code );
-        if ( product != null )
+        if ( product != null ) {
             product = productForm;
+            productInfo = product.getProductInfo();
+        }
         else {
             isNew = true;
             product = new Product();
@@ -290,15 +295,22 @@ public class ProductDAOImplement implements ProductDAO {
             product.setUri( productForm.getUri() );
             product.setData( productForm.getData() );
             product.setCreatedAccount( productForm.getCreatedAccount() );
+            productInfo = productForm.getProductInfo();
         }
         try {
             if ( isNew ) {
                 String SQL_INSERT_NEW_PRODUCT =
                         "insert into Products( Code, Create_Date, Image, Name, Price, Description, URI, Create_Account ) " +
                         "values ( ?, ?, ?, ?, ?, ?, ?, ? )";
+                String SQL_INSERT_PRODUCT_INFO =
+                        "insert into Products_Addition_Detail( Code, Category, Type, Source, Discount, Comment, Rate ) " +
+                        "values ( ?, ?, ?, ?, ?, ?, ? )";
                 jdbcTemplate.update( SQL_INSERT_NEW_PRODUCT, product.getCode(), new Date(),
                         product.getData(), product.getName(), product.getPriceTag(),
                         product.getDescription(), product.getUri(), product.getCreatedAccount() );
+                jdbcTemplate.update( SQL_INSERT_PRODUCT_INFO, product.getCode(), productInfo.getCategory(),
+                        productInfo.getType(), productInfo.getSource(), productInfo.getDiscount(),
+                        productInfo.getSeqcComment(), productInfo.getRate()  );
                 System.out.println( "Save product : " + product +" successfully ! " );
             } else {
                 String SQL_UPDATE_PRODUCT =

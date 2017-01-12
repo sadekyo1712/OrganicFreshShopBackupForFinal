@@ -236,7 +236,7 @@ public class MainController {
         ArrayList<String> tempType = new ArrayList<>();
         ArrayList<String> tempSource = new ArrayList<>();
 
-        if ( !categoryParam.equals("") )
+        if ( !categoryParam.equals("") && !categoryParam.equals("TAT CA") )
             category = categoryParam;
         if ( !type1.equals("") )
             tempType.add( type1 );
@@ -290,7 +290,7 @@ public class MainController {
                 productDAOImplement.fetchAllProductsWithConstraintPaginatorResult( page, maxResult,
                         maxNavigationPage, category, type, source, discount, searchName );
         modelMap.addAttribute( "cartForm", Utils.getCartInSession( request ) );
-        if ( result.getTotalRecord() == 0 )
+        if ( result == null || result.getTotalRecord() == 0 )
             return "not_found";
         int totalProduct = result.getTotalRecord();
         modelMap.addAttribute( "paginatorProduct", result );
@@ -334,6 +334,10 @@ public class MainController {
         }
         product.setCode( UUID.randomUUID().toString() );
         product.setCreatedAccount( username );
+        ProductInfo productInfo = product.getProductInfo();
+        productInfo.setCode( product.getCode() );
+        productInfo.setSeqcComment("");
+        productInfo.setRate( 3 );
         try {
             productDAOImplement.saveProduct( product );
         } catch ( Exception ex ) {

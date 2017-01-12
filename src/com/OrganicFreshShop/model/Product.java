@@ -21,7 +21,7 @@ public class Product {
     private String description;
     private String uri;
     private String createdAccount;
-    private ProductInfo productInfo = null;
+    private ProductInfo productInfo = new ProductInfo();
 
     public Product() {
 
@@ -135,6 +135,8 @@ public class Product {
     public void setProductInfo(ProductInfo productInfo) {
         this.productInfo = productInfo;
     }
+
+
 
     @Override
     public String toString() {

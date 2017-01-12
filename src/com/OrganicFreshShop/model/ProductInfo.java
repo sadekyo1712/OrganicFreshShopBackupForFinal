@@ -1,5 +1,7 @@
 package com.OrganicFreshShop.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by sadekyo1712
  * Desc : yolo, code & code for fun :D
@@ -18,9 +20,18 @@ public class ProductInfo {
     private int discount;
     private String seqcComment;
     private String[] comment;
+    private ArrayList<String> commentList = new ArrayList<>();
     private int rate;
 
     public void commentSplit() {
+        if ( seqcComment.equals("") ) {
+            comment = null;
+            return;
+        }
+        if ( !seqcComment.contains("@@@@") ) {
+            comment = new String[]{ seqcComment };
+            return;
+        }
         comment = seqcComment.split("@@@@");
     }
 

@@ -26,16 +26,57 @@
                     <c:if test="${not empty message }">
                         <div>${message}</div>
                     </c:if>
-
                     <div>
-                        <span>Mã sản phẩm<label>*</label></span>
-                        <c:if test="${not empty productForm.code}">
-                            <form:hidden path="code"/>${productForm.code}
+                        <span>Họ cây</span>
+                        <form:select path="productInfo.category">
+                            <form:option value="CAY AN TRAI">Lựa chọn họ cây</form:option>
+                            <form:option value="CAY AN TRAI">Cây ăn trái</form:option>
+                            <form:option value="CAY GIA VI">Cây gia vị</form:option>
+                            <form:option value="CAY HOA CANH">Cây hoa cảnh</form:option>
+                            <form:option value="CAY RAU AN LA">Cây rau ăn lá</form:option>
+                            <form:option value="CAY THAO DUOC VA RAU THUOC">Cây thảo dược và rau thuốc</form:option>
+                        </form:select>
+                    </div>
+                    <div>
+                        <span>Loại rau</span>
+                        <form:select path="productInfo.type">
+                            <form:option value="RAU AN THAN">Lựa chọn loai rau</form:option>
+                            <form:option value="RAU AN THAN">Rau ăn thân</form:option>
+                            <form:option value="RAU AN RE CU">Rau ăn rễ củ</form:option>
+                            <form:option value="RAU AN HAT">Rau ăn hạt</form:option>
+                            <form:option value="RAU MAM">Rau mầm</form:option>
+                            <form:option value="HAT CAC LOAI">Hạt các loại</form:option>
+                            <form:option value="RONG TAO BIEN">Rong tảo biển</form:option>
+                            <form:option value="NAM AN">Nấm ăn</form:option>
+                            <form:option value="RAU THOM">Rau thơm</form:option>
+                            <form:option value="CAC LOAI RAU KHAC">Các loại rau khác</form:option>
+                        </form:select>
+                    </div>
+                    <div>
+                        <span>Nguồn gốc  sản phẩm</span>
+                        <form:select path="productInfo.source">
+                            <form:option value="CA NHAN / TIEU THUONG">Lựa chọn nguồn gốc sản phẩm</form:option>
+                            <form:option value="CA NHAN / TIEU THUONG">Cá nhân / Tiểu thương</form:option>
+                            <form:option value="NONG TRAI VINAGROUP">Nông trại Vingroup ©</form:option>
+                            <form:option value="NONG TRAI VINARASA">Nông trại Vinarasa ©</form:option>
+                            <form:option value="NONG TRAI PHU DIEN">Nông trại rau hữu cơ Phú Diễn ©</form:option>
+                            <form:option value="RAU SACH BAC TOM">Rau sạch bác Tôm ©</form:option>
+                            <form:option value="NONG TRAI NHAT TAN">Nông trại Nhật Tân ©</form:option>
+                            <form:option value="NONG TRAI PHU THUONG">Nông trại rau sạch Phú Thượng ©</form:option>
+                            <form:option value="ORGANIK FRESH">Nông trại hữu cơ OrganikFresh ©</form:option>
+                            <form:option value="NONG TRAI KHAC">Các nông trại khác</form:option>
+                        </form:select>
+                    </div>
+                    <div>
+                        <span>Mức giảm giá hoặc chiết khấu</span>
+                        <c:if test="${not empty productForm.productInfo.discount}">
+                            <form:input path="productInfo.discount" placeholder="${productForm.productInfo.discount}" required="true"
+                                        pattern="[1-9][\d]*" title="Require int value"/>
                         </c:if>
-                        <c:if test="${empty productForm.code}">
-                            <form:input path="code" required="true" placeholder="Ex: 1234-5678-9011"/>
+                        <c:if test="${empty productForm.productInfo.discount}">
+                            <form:input path="productInfo.discount" required="true" placeholder="Ex: 20"
+                                        pattern="[1-9][\d]*" title="Require int value"/>
                         </c:if>
-                        <span><form:errors path="code"/></span>
                     </div>
                     <div>
                         <span>Tên sản phẩm<label>*</label></span>
@@ -80,7 +121,7 @@
                         </c:if>
                     </div>
                     <div>
-                        <span>URI sản phẩm</span>
+                        <span>Category sản phẩm</span>
                         <form:select path="uri">
                             <form:option value="/resources/images/background.jpg">Lựa chọn hình ảnh demo sản phẩm</form:option>
                             <form:option value="/resources/images/spring.jpg">DEMO SPRING 1</form:option>

@@ -50,7 +50,7 @@
     <div class="container">
         <div class="one-fifth column row_1">
 				<span class="selection-box">
-                    <select class="domains valid" name="domains">
+                    <select title="" class="domains valid" name="domains">
                         <option>Vietnam</option>
                         <option>English</option>
                         <option>French</option>
@@ -63,11 +63,12 @@
                     <li>
                         Chào mừng <a href="${pageContext.request.contextPath}/account_info">${pageContext.request.userPrincipal.name}</a> quay trở lại với OrganikShop
                     </li>
+                    <li><a style="color: #878a8f" href="${pageContext.request.contextPath}/logout"> &#9881; Đăng xuất</a></li>
                 </ul>
             </c:if>
             <c:if test="${pageContext.request.userPrincipal.name == null}">
                 <ul>
-                    <li class="active"><a href="${pageContext.request.contextPath}/login">Đăng nhập</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/login"> &#9758;&nbsp;&nbsp;Đăng nhập hoặc Đăng ký</a></li>
                 </ul>
             </c:if>
         </div>
@@ -89,16 +90,16 @@
                                     <div class="h_nav">
                                         <h4></h4>
                                         <ul>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Cây ăn trái</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Cây gia vị</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Cây hoa cảnh</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Cây rau ăn lá</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Cây thảo dược & rau thuốc</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rau ăn thân</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rau ăn rễ củ</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rau ăn hạt</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rau mầm</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Hạt các loại</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?category=CAY+AN+TRAI">Cây ăn trái</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?category=CAY+GIA+VI">Cây gia vị</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?category=CAY+HOA+CANH">Cây hoa cảnh</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?category=CAY+RAU+AN+LA">Cây rau ăn lá</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?category=CAY+THAO+DUOC+VA+RAU+THUOC">Cây thảo dược & rau thuốc</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type1=RAU+AN+THAN">Rau ăn thân</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type2=RAU+AN+RE+CU">Rau ăn rễ củ</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type3=RAU+AN+HAT">Rau ăn hạt</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type4=RAU+MAM">Rau mầm</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type5=HAT+CAC+LOAI">Hạt các loại</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,9 +107,9 @@
                                     <div class="h_nav">
                                         <h4></h4>
                                         <ul>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rong tảo biển</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Nấm ăn</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Rau thơm</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type6=RONG+TAO+BIEN">Rong tảo biển</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type7=NAM+AN">Nấm ăn</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/product_list?type8=RAU+THOM">Rau thơm</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -116,23 +117,23 @@
                                     <div class="h_nav">
                                         <h4>Sản phẩm hỗ trợ</h4>
                                         <ul>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Chậu và kệ trồng các loại</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Dinh dưỡng cho cây</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ làm vườn</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Dụng cụ ươm hạt</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Vườn đứng( vertical garden )</a></li>
-                                            <li><a href="${pageContext.request.contextPath}/product_list">Đất sạch dinh dưỡng</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Chậu và kệ trồng các loại</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Dinh dưỡng cho cây</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Dụng cụ làm vườn</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Dụng cụ ươm hạt</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Vườn đứng( vertical garden )</a></li>
+                                            <li><a href="${pageContext.request.contextPath}/contact">Đất sạch dinh dưỡng</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a class="color1" href="${pageContext.request.contextPath}/index_single">Blog</a></li>
-                    <li><a class="color4" href="${pageContext.request.contextPath}/about">About</a></li>
-                    <li><a class="color5" href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
+                    <li><a class="color2" href="${pageContext.request.contextPath}/index_single">Blog</a></li>
+                    <li><a class="color2" href="${pageContext.request.contextPath}/about">About</a></li>
+                    <li><a class="color2" href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
-                        <li class="grid"><a class="color2" href="${pageContext.request.contextPath}/index">Tài khoản</a>
+                        <li class="grid"><a class="color2" href="${pageContext.request.contextPath}/index">Account</a>
                             <div class="megapanel">
                                 <div class="row">
                                     <div class="col1">
@@ -147,11 +148,14 @@
                                     </div>
                                     <div class="col1">
                                         <div class="h_nav">
-                                            <h4>Dành cho nhà cung cấp</h4>
                                             <security:authorize access="hasAnyRole('ROLE_USER','ROLE_EMPLOYEE','ROLE_MANAGER')">
+                                                <h4 style="color: #bcc1c8">Dành cho nhà cung cấp</h4>
                                                 <ul>
-                                                    <li>( Chức năng chỉ dành cho nhà cung cấp )</li>
+                                                    <li style="color: #bcc1c8">( Chức năng chỉ dành cho nhà cung cấp )</li>
                                                 </ul>
+                                            </security:authorize>
+                                            <security:authorize access="hasAnyRole('ROLE_SUPPLIER')">
+                                                <h4>Dành cho nhà cung cấp</h4>
                                             </security:authorize>
                                             <ul>
                                                 <security:authorize access="hasAnyRole('ROLE_SUPPLIER')">
@@ -165,11 +169,14 @@
                                     </div>
                                     <div class="col1">
                                         <div class="h_nav">
-                                            <h4>Dành cho người quản lý</h4>
                                             <security:authorize access="hasAnyRole('ROLE_USER','ROLE_SUPPLIER')">
+                                                <h4 style="color: #bcc1c8">Dành cho người quản lý</h4>
                                                 <ul>
-                                                    <li>( Chức năng chỉ dành cho người quản lý )</li>
+                                                    <li style="color: #bcc1c8">( Chức năng chỉ dành cho người quản lý )</li>
                                                 </ul>
+                                            </security:authorize>
+                                            <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">
+                                                <h4>Dành cho nhà cung cấp</h4>
                                             </security:authorize>
                                             <ul>
                                                 <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">

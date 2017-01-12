@@ -30,10 +30,7 @@
                     </ul>
                     <ul>
                         <li><span>Mật khẩu : </span>*********${userDetail.password}</li>
-                        <li><span>Chuỗi băm mật khẩu : </span>${account.password}</li>
-                        <li><span>Account non expired : </span>${userDetail.accountNonExpired}</li>
-                        <li><span>Account non locked : </span>${userDetail.accountNonLocked}</li>
-                        <li><span>Credentials non locked : </span>${userDetail.credentialsNonExpired}</li>
+                        <li><span>Chuỗi băm xác nhận người dùng : </span>${account.password}</li>
                         <li><span>Tài khoản được kích hoạt : </span>${userDetail.enabled}</li>
                     </ul>
                 </li>
