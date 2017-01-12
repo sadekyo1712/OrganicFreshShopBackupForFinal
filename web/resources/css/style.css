@@ -159,7 +159,8 @@ body a{
 }
 .logo {
 	border-right: 1px solid #1d462a;
-	padding-left: 13px;
+	padding-left: 1px;
+	padding-right: 0;
 }
 .logo h1{
 	text-transform: inherit;
@@ -223,6 +224,7 @@ body a{
 .header-bottom-left{
 	margin-top:13px;
 	padding-right:0;
+	padding-left:130px;
 }
 .col-xs-6.menu {
   padding-right: 0;

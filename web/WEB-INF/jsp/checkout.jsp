@@ -78,7 +78,7 @@
 
         <div class="col-md-3 cart-total">
             <a class="continue" href="${pageContext.request.contextPath}/product_list">Tiếp tục mua sắm</a>
-            <a class="continue" href="${pageContext.request.contextPath}/checkout_customer">Nhập thông tin khách hàng</a>
+            <a class="continue" href="${pageContext.request.contextPath}/checkout_customer">Nhập thông tin người nhận</a>
             <div class="price-details">
                 <h3>Chi tiết giỏ hàng</h3>
                 <span>Tổng tiền sản phẩm</span>
@@ -113,7 +113,7 @@
 
 
             <div class="clearfix"></div>
-            <a class="order" href="${pageContext.request.contextPath}/checkout_confirm">Đặt hóa đơn</a>
+            <a class="order" href="${pageContext.request.contextPath}/checkout_confirm">Xác nhận thông tin đơn hàng</a>
             <div class="total-item">
                 <h3>TÙY CHỌN</h3>
                 <h4>MÃ GIẢM GIÁ</h4>

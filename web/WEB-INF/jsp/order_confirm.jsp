@@ -56,7 +56,7 @@
         </div>
 
         <div class="col-md-3 cart-total">
-            <a class="continue" href="${pageContext.request.contextPath}/checkout">Thay đổi thông tin hóa đơn</a>
+            <a class="continue" href="${pageContext.request.contextPath}/checkout">Thay đổi thông tin đơn hàng</a>
             <div class="price-details">
                 <h4>Thông tin khách hàng</h4>
                 <span>Tên khách hàng :</span>
@@ -86,7 +86,7 @@
                 <div><input id="saveOrder" type="submit" class="hidden"/></div>
             </form>
             <a class="order">
-                <label for="saveOrder">Lập hóa đơn và thanh toán</label>
+                <label for="saveOrder">Đặt hàng và thanh toán</label>
             </a>
             <div class="total-item">
                 <h3>TÙY CHỌN</h3>
