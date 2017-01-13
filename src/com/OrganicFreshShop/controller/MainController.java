@@ -467,6 +467,30 @@ public class MainController {
         return "product_information";
     }
 
+    @RequestMapping( value = "/saveProductCommentAndRate", method = RequestMethod.POST)
+    public String saveCommentAndRate( ModelMap modelMap, HttpServletRequest request,
+                                      @RequestParam( value = "code", defaultValue = "" ) String code,
+                                      @RequestParam( value = "rate", defaultValue = "" ) String rate,
+                                      @RequestParam( value = "user_name", defaultValue = "" ) String userName,
+                                      @RequestParam( value = "comment", defaultValue = "" ) String comment ) {
+        if ( code.equals("") || ( userName.equals("") && comment.equals("") && rate.equals("") ) )
+            return "product_information";
+        Product product = productDAOImplement.fetchProduct( code );
+        ProductInfo productInfo = product.getProductInfo();
+        if ( !userName.equals("") && !comment.equals("") ) {
+            String seqComment = productInfo.getSeqcComment();
+            String tempComment = userName + ":" + comment;
+            seqComment += "@@@@" + tempComment;
+            productInfo.setSeqcComment( seqComment );
+        }
+        if ( !rate.equals("") ) {
+            int rateProduct = Integer.parseInt( rate );
+            int ratePoint = ( int ) Math.ceil( ( double )productInfo.getRate() * 0.3d + ( double )rateProduct * 0.7d );
+            productInfo.setRate( ratePoint );
+        }
+        productDAOImplement.saveProductInfo( productInfo );
+        return "redirect:/product_info?code=" + code;
+    }
     /**
      * Xem thong tin gio hang
      * @param servletRequest

@@ -330,6 +330,22 @@ public class ProductDAOImplement implements ProductDAO {
     }
 
     @Override
+    public void saveProductInfo( ProductInfo productInfo ) {
+
+        String SQL_UPDATE_PRODUCT_INFO =
+                "update Products_Addition_Detail " +
+                "set Category = ?, Type = ?, Source = ?, Discount = ?, Comment = ?, Rate = ? " +
+                "where Code = ?";
+        try {
+            jdbcTemplate.update( SQL_UPDATE_PRODUCT_INFO, productInfo.getCategory(), productInfo.getType(),
+                    productInfo.getSource(), productInfo.getDiscount(), productInfo.getSeqcComment(),
+                    productInfo.getRate(), productInfo.getCode() );
+        } catch ( Exception ex ) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
     public boolean deleteProduct(Product product) {
         return false;
     }

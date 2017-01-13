@@ -126,7 +126,7 @@
                 <div class="dropdown_top_2">
                     <div class="dropdown_left">
                         <div class="stars">
-                            <form id="rate" action="">
+                            <form id="rate" action="${pageContext.request.contextPath}/saveProductCommentAndRate?code=${product.code}" method="post">
                                 <c:if test="${product.productInfo.rate == 5}">
                                     <div style="font-weight: normal; font-style: normal; color: #3bc69c; text-align: center">Tuyệt vời &#9787; !!!</div>
                                     <input class="star star-5" id="star-5" type="radio" name="rate" value="5" checked/>
@@ -271,6 +271,10 @@
                         &nbsp;&nbsp;-----> Ngày tạo sản phẩm : ${product.timestamp}<br>
                         &nbsp;&nbsp;-----> Tên đầy đủ của sản phẩm : ${product.name}<br>
                         &nbsp;&nbsp;-----> Giá sản phẩm : <format:formatNumber value="${product.priceTag}" currencySymbol="VNĐ" type="currency"/><br>
+                        &nbsp;&nbsp;-----> Họ cây : ${product.productInfo.category}<br>
+                        &nbsp;&nbsp;-----> Loại cây : ${product.productInfo.type}<br>
+                        &nbsp;&nbsp;-----> Nguồn gốc sản phẩm : ${product.productInfo.source}<br>
+                        &nbsp;&nbsp;-----> Chương trình giảm giá của sản phẩm : ${product.productInfo.discount}%<br>
                         &nbsp;&nbsp;-----> Mô tả sản phẩm : ${product.description}<br>
                     </li>
                 </ul>
@@ -317,9 +321,16 @@
             <li class="item3">
                 <a href="#"><img src="<c:url value="/resources/images/product_arrow.png" />">Đánh giá</a>
                 <ul style="color: #ffffff">
-                    <li><img src="<c:url value="/resources/images/ava1.jpg" />" class="img-responsive" alt="" width="40" height="40" >Ăn khá ngon !!!!</li>
-                    <li><img src="<c:url value="/resources/images/ava2.jpg" />" class="img-responsive" alt="" width="40" height="40" >Vị rất dở chất lượng phục vụ không tốt.</li>
-                    <li><img src="<c:url value="/resources/images/ava3.jpg" />" class="img-responsive" alt="" width="40" height="40" >Thanh toán rất khó khăn.</li>
+                    <c:forEach items="${product.productInfo.comment}" var="comment">
+                        <c:forEach items="${comment.split(':')}" var="user_comment" varStatus="status">
+                            <c:if test="${status.index == 0}">
+                                <li><img src="<c:url value="/resources/images/user.png" />" class="img-responsive" alt="" width="60" height="60" >&nbsp;&#9786;&nbsp;"${user_comment}" đã nhận xét : </li>
+                            </c:if>
+                            <c:if test="${status.index == 1}">
+                                <li style="color: rgba(255, 255, 255, 0.5)">&nbsp;&nbsp;&#8618;&nbsp;&nbsp;&nbsp;${user_comment}</li>
+                            </c:if>
+                        </c:forEach>
+                    </c:forEach>
                 </ul>
             </li>
             <li class="item4">
@@ -346,26 +357,21 @@
     <div class="container">
         <div class="box_3">
             <h4>*Nhận xét của bạn sẽ giúp những người khác có thể chọn lựa sản phẩm dễ dàng hơn.</h4>
-            <form>
-                <div class="column_2">
-                    <input form="message" type="text" class="text" placeholder="" value="Tên của bạn" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Tên';}" required>
-                    <input form="message" type="text" class="text" placeholder="" value="Email" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:2.7%" required>
-                    <input form="message" type="text" class="text" placeholder="" value="Chủ đề" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Chủ đề';}" style="margin-left:2.7%" required>
-                </div>
-                <div class="column_3">
-                    <textarea form="message" placeholder="Nhận xét" onfocus="this.value = '';"
-                              onblur="if (this.value == '') {this.value = 'Nhận xét';}" required>Nhận xét</textarea>
-                </div>
-                <div class="form-submit1">
-                    <form id="message" action="" method="post">
-                        <input type="submit" value="Gửi nhận xét">
-                    </form>
-                </div>
-                <div class="clearfix"></div>
-            </form>
+            <div class="column_2">
+                <input form="message" type="text" class="text" placeholder="Tên của bạn" name="user_name" required>
+                <input form="message" type="text" class="text" pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.]+"
+                       placeholder="Email" name="email" style="margin-left:2.7%" required>
+                <input form="message" type="text" class="text" placeholder="Chủ đề" name="subject" style="margin-left:2.7%" required>
+            </div>
+            <div class="column_3">
+                    <textarea form="message" placeholder="Nhận xét" name="comment" required>Nhận xét</textarea>
+            </div>
+            <div class="form-submit1">
+                <form id="message" action="${pageContext.request.contextPath}/saveProductCommentAndRate?code=${product.code}" method="post">
+                    <input type="submit" value="Gửi nhận xét">
+                </form>
+            </div>
+            <div class="clearfix"></div>
             <div class="clearfix"></div>
         </div>
     </div>

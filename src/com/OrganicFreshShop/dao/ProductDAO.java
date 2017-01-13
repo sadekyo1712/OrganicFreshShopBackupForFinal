@@ -2,6 +2,7 @@ package com.OrganicFreshShop.dao;
 
 import com.OrganicFreshShop.model.PaginatorResult;
 import com.OrganicFreshShop.model.Product;
+import com.OrganicFreshShop.model.ProductInfo;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public interface ProductDAO {
     public PaginatorResult<Product> fetchAllProductsWithConstraintPaginatorResult
             ( int page, int resultEachPage, int maxNavigationPage,
               String category, String[] type, String[] source, int discount, String likeName);
+    public void saveProductInfo( ProductInfo productInfo );
     public List<Product> fetchAllProducts();
     public List<Product>  findAllProductMatchNamePattern( String likeName );
     public boolean saveProduct( Product product );

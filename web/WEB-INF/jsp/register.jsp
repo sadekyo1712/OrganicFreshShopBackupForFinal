@@ -43,7 +43,6 @@
                         <span>Trạng thái tài khoản</span>
                         <form:select path="active">
                             <form:option value="true">KÍCH HOẠT</form:option>
-                            <form:option value="false">VÔ HIỆU HÓA</form:option>
                         </form:select>
                     </div>
                 </div>
