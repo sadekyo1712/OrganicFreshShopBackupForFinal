@@ -46,16 +46,47 @@
 </head>
 <body>
 <format:setLocale value="vi_VN" scope="session"/>
+<menu>
+    <label for="trigger">
+        <input id="trigger" type="checkbox" />
+        <section class="drawer-list">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+        <hamburger> <i></i>
+            <text>
+                <close>close</close>
+                <open>menu</open>
+            </text>
+        </hamburger>
+    </label>
+</menu>
 <div class="header_top">
     <div class="container">
         <div class="one-fifth column row_1">
-				<span class="selection-box">
+				<span class="selection-box cssmenu">
                     <select title="" class="domains valid" name="domains">
                         <option>Vietnam</option>
                         <option>English</option>
                         <option>French</option>
                     </select>
+                    <%--<c:if test="${pageContext.request.userPrincipal.name == null}">--%>
+                        <%--<ul>--%>
+                            <%--<li class="active"><a href="${pageContext.request.contextPath}/login"> &#9758;&nbsp;&nbsp;Đăng nhập hoặc Đăng ký</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</c:if>--%>
                 </span>
+            <%--<span class="selection-box cssmenu">--%>
+                <%--<c:if test="${pageContext.request.userPrincipal.name == null}">--%>
+                    <%--<ul>--%>
+                        <%--<li class="active"><a href="${pageContext.request.contextPath}/login"> &#9758;&nbsp;&nbsp;Đăng nhập hoặc Đăng ký</a></li>--%>
+                    <%--</ul>--%>
+                <%--</c:if>--%>
+            <%--</span>--%>
         </div>
         <div class="cssmenu">
             <c:if test="${pageContext.request.userPrincipal.name != null}">

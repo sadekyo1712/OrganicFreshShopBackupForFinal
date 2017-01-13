@@ -22,15 +22,15 @@
         </div>
         <div class="col-md-9 contact_left">
             <h1>Liên hệ đại lý của chúng tôi</h1>
-            <p>Liên hệ với đại lý của chúng tôi để có sự hỗ trợ bán hàng tốt nhất và các chính sách hỗ
+            <p>Liên hệ với đại lý của chúng tôi để có sự hỗ trợ bán hàng và các dịch vụ tốt nhất đi kèm các chính sách hỗ
             trợ quảng cáo với chi phí hợp lý.</p>
             <form>
                 <div class="column_2">
-                    <input type="text" class="text" placeholder="" value="Tên" onfocus="this.value = '';"
+                    <input form="message" type="text" class="text" placeholder="" value="Tên" onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = 'Tên';}">
-                    <input type="text" class="text" placeholder="" value="Email" onfocus="this.value = '';"
+                    <input form="message" type="text" class="text" placeholder="" value="Email" onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:2.7%">
-                    <input type="text" class="text" placeholder="" value="Chủ đề" onfocus="this.value = '';"
+                    <input form="message" type="text" class="text" placeholder="" value="Chủ đề" onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = 'Chủ đề';}" style="margin-left:2.7%">
                 </div>
                 <div class="column_3">
@@ -38,7 +38,9 @@
                               onblur="if (this.value == '') {this.value = 'Tin nhắn';}">Tin nhắn cho chúng tôi</textarea>
                 </div>
                 <div class="form-submit1">
-                    <input type="submit" value="Gửi cho chúng tôi">
+                    <form id="message" action="" method="post">
+                        <input type="submit" value="Gửi cho chúng tôi">
+                    </form>
                 </div>
                 <div class="clearfix"></div>
             </form>

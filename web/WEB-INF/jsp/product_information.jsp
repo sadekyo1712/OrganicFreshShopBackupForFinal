@@ -17,6 +17,7 @@
 <jsp:include page="header.jsp"/>
 <format:setLocale value="vi_VN" scope="session"/>
 <%--Start script--%>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <script>
     jQuery(document).ready(function($) {
 
@@ -80,7 +81,7 @@
                 </ul>
                 <h1>${product.name}</h1>
                 <p>${product.description}</p>
-                <div class="dropdown_top">
+                <div class="dropdown_top_3">
                     <div class="dropdown_left">
                         <select title="dropbox_buy_product" form="buy_product" class="dropdown" name="quantity" tabindex="10" data-settings='{"wrapperClass":"metro1"}'>
                             <option value="1">Số lượng( kg )</option>
@@ -122,12 +123,98 @@
                     </ul>
                     <div class="clearfix"></div>
                 </div>
+                <div class="dropdown_top_2">
+                    <div class="dropdown_left">
+                        <div class="stars">
+                            <form id="rate" action="">
+                                <c:if test="${product.productInfo.rate == 5}">
+                                    <div style="font-weight: normal; font-style: normal; color: #3bc69c; text-align: center">Tuyệt vời &#9787; !!!</div>
+                                    <input class="star star-5" id="star-5" type="radio" name="rate" value="5" checked/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="rate" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="rate" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="rate" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="rate" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </c:if>
+                                <c:if test="${product.productInfo.rate == 4}">
+                                    <div style="font-weight: normal; font-style: normal; color: #116c88; text-align: center">Khá ổn &#9786; </div>
+                                    <input class="star star-5" id="star-5" type="radio" name="rate" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="rate" value="4" checked/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="rate" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="rate" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="rate" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </c:if>
+                                <c:if test="${product.productInfo.rate == 3}">
+                                    <div style="font-weight: normal; font-style: normal; color: #c6c05d; text-align: center">Cũng được &#9863;</div>
+                                    <input class="star star-5" id="star-5" type="radio" name="rate" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="rate" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="rate" value="3" checked/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="rate" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="rate" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </c:if>
+                                <c:if test="${product.productInfo.rate == 2}">
+                                    <div style="font-weight: normal; font-style: normal; color: #c64887; text-align: center">Tàm tạm &#9865;</div>
+                                    <input class="star star-5" id="star-5" type="radio" name="rate" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="rate" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="rate" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="rate" value="2" checked/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="rate" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </c:if>
+                                <c:if test="${product.productInfo.rate == 1}">
+                                    <div style="font-weight: normal; font-style: normal; color: #762929; text-align: center">Rất tệ &#9785;</div>
+                                    <input class="star star-5" id="star-5" type="radio" name="rate" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="rate" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="rate" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="rate" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="rate" value="1" checked/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </c:if>
+                            </form>
+                        </div>
+                    </div>
+                    <ul class="color_list">
+                        <li>
+                            <p>Đánh giá của người dùng:&nbsp;</p>
+                        </li>
+                        <li>
+                            <div style="color: #26BC85" class="">${product.productInfo.rate}/5&nbsp;&nbsp;</div>
+                        </li>
+                        <li>
+                            <input form="rate" type="submit" class="item_add_rate btn_5" value="Chấm điểm">
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
                 <div class="simpleCart_shelfItem">
                     <div class="price_single">
                         <div class="head">
                             <h2><span class="amount item_price">
                                 <format:formatNumber value="${product.priceTag}" currencySymbol="VNĐ" type="currency"/></span></h2></div>
-                        <div class="head_desc"><a href="${pageContext.request.contextPath}/intro">Reviews</a><img src="<c:url value="/resources/images/review.png" />" alt=""/></li>
+                        <%--<div class="head_desc"><a href="${pageContext.request.contextPath}/intro">Reviews</a><img src="<c:url value="/resources/images/review.png" />" alt=""/></li>--%>
+                        <div class="head_desc">Giảm giá và chiết khấu : ${product.productInfo.discount}%</li>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -254,7 +341,36 @@
             </li>
         </ul>
     </div>
-    <h3 class="m_2">Gợi ý ngẫu nhiên các sản phẩm </h3>
+
+    <h3 class="m_2">Đánh giá của bạn về sản phẩm </h3>
+    <div class="container">
+        <div class="box_3">
+            <h4>*Nhận xét của bạn sẽ giúp những người khác có thể chọn lựa sản phẩm dễ dàng hơn.</h4>
+            <form>
+                <div class="column_2">
+                    <input form="message" type="text" class="text" placeholder="" value="Tên của bạn" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Tên';}" required>
+                    <input form="message" type="text" class="text" placeholder="" value="Email" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:2.7%" required>
+                    <input form="message" type="text" class="text" placeholder="" value="Chủ đề" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Chủ đề';}" style="margin-left:2.7%" required>
+                </div>
+                <div class="column_3">
+                    <textarea form="message" placeholder="Nhận xét" onfocus="this.value = '';"
+                              onblur="if (this.value == '') {this.value = 'Nhận xét';}" required>Nhận xét</textarea>
+                </div>
+                <div class="form-submit1">
+                    <form id="message" action="" method="post">
+                        <input type="submit" value="Gửi nhận xét">
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <h3 class="m_2">Có thể bạn quan tâm </h3>
     <div class="container">
         <div class="box_3">
             <c:forEach items="${listRandomProductDemo}" var="product">

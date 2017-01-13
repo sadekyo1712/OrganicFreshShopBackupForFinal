@@ -15,6 +15,26 @@
 <body>
 <jsp:include page="header.jsp"/>
 <format:setLocale value="vi_VN" scope="session"/>
+
+<%--<menu>--%>
+    <%--<label for="trigger">--%>
+        <%--<input id="trigger" type="checkbox" />--%>
+        <%--<section class="drawer-list">--%>
+            <%--<ul>--%>
+                <%--<li><a href="#">Home</a></li>--%>
+                <%--<li><a href="#">Blog</a></li>--%>
+                <%--<li><a href="#">About</a></li>--%>
+                <%--<li><a href="#">Contact</a></li>--%>
+            <%--</ul>--%>
+        <%--</section>--%>
+        <%--<hamburger> <i></i>--%>
+            <%--<text>--%>
+                <%--<close>close</close>--%>
+                <%--<open>menu</open>--%>
+            <%--</text>--%>
+        <%--</hamburger>--%>
+    <%--</label>--%>
+<%--</menu>--%>
 <%--banner--%>
 <div class="banner">
     <div class="container">
